@@ -1,6 +1,9 @@
-body{
-    /* background-image: linear-gradient(to right, #000, rgb(200, 145, 22)); */
+/* body{
     background-image: linear-gradient(to right, #fafafc, rgba(103, 102, 146, 0.3), rgba(80, 77, 100, 0.5));
+} */
+
+header{
+    height:200px;
 }
 
 
@@ -12,4 +15,24 @@ body{
     border-radius: 10px;
     position: relative;
     top:20px;
+    z-index: 9999999999;
+}
+
+.opaque{
+    background-image: linear-gradient(to right, #fafafc, rgba(103, 102, 146, 0.3), rgba(80, 77, 100, 0.5));
+    height:100vh;
+    width:100vw;
+    z-index: 1;
+    position: fixed;
+}
+
+.small-box{
+    background-image: url('/media/image3.jpg') ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    height:400px;
+    width:800px;
+    border-radius: 20px;
+    /* z-index: -9999999999999999; */
 }
