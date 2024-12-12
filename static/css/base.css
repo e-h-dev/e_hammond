@@ -1,3 +1,32 @@
 body{
-    background-image: linear-gradient(to right, #000, rgb(200, 145, 22));
+    /* background-image: linear-gradient(to right, #000, rgb(200, 145, 22)); */
+    background-image: linear-gradient(to right, #fcfcfc, #a6a6a6);
+}
+
+
+.logo {
+    background-image: url('/media/logo2.png');
+    background-size: contain;
+    height:120px;
+    width:120px;
+    border-radius: 10px;
+    position: absolute;
+    top:20px;
+}
+
+.search{
+    position: absolute;
+    top:20px;
+}
+
+.login {
+    position:absolute;
+    left: 500px;
+    top:20px;
+}
+
+.messages {
+    position:absolute;
+    left: 900px;
+    top:20px;
 }
