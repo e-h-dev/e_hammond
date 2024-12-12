@@ -1,11 +1,11 @@
 body{
     /* background-image: linear-gradient(to right, #000, rgb(200, 145, 22)); */
-    background-image: linear-gradient(to right, #fcfcfc, #a6a6a6);
+    background-image: linear-gradient(to right, #fafafc, rgba(103, 102, 146, 0.3), rgba(80, 77, 100, 0.5));
 }
 
 
 .logo {
-    background-image: url('/media/logo2.png');
+    background-image: url('/media/logo3.png');
     background-size: contain;
     height:120px;
     width:120px;
