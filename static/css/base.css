@@ -10,23 +10,6 @@ body{
     height:120px;
     width:120px;
     border-radius: 10px;
-    position: absolute;
-    top:20px;
-}
-
-.search{
-    position: absolute;
-    top:20px;
-}
-
-.login {
-    position:absolute;
-    left: 500px;
-    top:20px;
-}
-
-.messages {
-    position:absolute;
-    left: 900px;
+    position: relative;
     top:20px;
 }
