@@ -8,7 +8,7 @@ header{
 
 
 .logo {
-    background-image: url('/media/logo3.png');
+    background-image: url('/media/logo.png');
     background-size: contain;
     height:120px;
     width:120px;
@@ -27,12 +27,48 @@ header{
 }
 
 .small-box{
-    background-image: url('/media/image3.jpg') ;
+    background-image: url('/media/image7.jpg') ;
     background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.2;
+    /* background-repeat: no-repeat; */
+    opacity: 0.5;
     height:400px;
-    width:800px;
+    width:500px;
     border-radius: 20px;
     /* z-index: -9999999999999999; */
+}
+
+.pic{
+    background-image: url('/media/image6.jpg') ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    height:400px;
+    width:300px;
+    border-radius: 20px;
+    /* z-index: -9999999999999999; */
+}
+
+.pic-text-box{
+    /* background-color: #fff; */
+    z-index: 1;
+    position: relative;
+    height: auto;
+    width:auto;
+}
+
+.info-box{
+    background-color: rgba(80, 77, 100, 0.4);
+    color:#f2f2f2;
+    z-index: 1;
+    position: relative;
+    bottom:400px;
+    height: auto;
+    width:700px;
+    padding:30px;
+}
+
+button{
+    position: relative;
+    z-index: 1;
+    bottom:200px;
 }
