@@ -1,7 +1,3 @@
-/* body{
-    background-image: linear-gradient(to right, #fafafc, rgba(103, 102, 146, 0.3), rgba(80, 77, 100, 0.5));
-} */
-
 header{
     height:200px;
 }
@@ -49,11 +45,14 @@ header{
 }
 
 .pic-text-box{
-    /* background-color: #fff; */
     z-index: 1;
     position: relative;
     height: auto;
     width:auto;
+    font-family: Agdasima;
+    font-weight:bold;
+    color: rgb(80, 77, 100);
+    letter-spacing: 2px;
 }
 
 .info-box{
