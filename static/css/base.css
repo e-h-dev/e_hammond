@@ -23,14 +23,16 @@ header{
 }
 
 .small-box{
-    background-image: url('/media/image7.jpg') ;
+    background-image: url('/media/image8.jpg') ;
     background-size: contain;
-    /* background-repeat: no-repeat; */
+    /* background-color: rgba(80, 77, 100, 0.1); */
+    background-repeat: no-repeat;
     opacity: 0.5;
     height:400px;
-    width:500px;
+    width:60vw;
     border-radius: 20px;
-    /* z-index: -9999999999999999; */
+    /* border: solid 200px rgba(80, 77, 100, 0.1); */
+    z-index: -9999999999999999;
 }
 
 .pic{
@@ -56,18 +58,21 @@ header{
 }
 
 .info-box{
-    background-color: rgba(80, 77, 100, 0.4);
+    background-color: rgba(80, 77, 100, 0.2);
     color:#f2f2f2;
     z-index: 1;
     position: relative;
     bottom:400px;
     height: auto;
+    border-radius: 20px;
     width:700px;
     padding:30px;
+    display: none;
 }
 
 button{
-    position: relative;
+    /* position: relative;
     z-index: 1;
-    bottom:200px;
+    bottom:200px; */
+    display: none;
 }
