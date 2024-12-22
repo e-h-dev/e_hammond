@@ -14,9 +14,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
     <title>Document {% block extra_title %}{% endblock %}</title>
@@ -32,28 +30,58 @@
                             <div class="logo shadow"></div>
                         </a>
                     </div>
-                    <div class="col-md-5 d-none d-lg-block">
+                    <div class="col-md-6 d-none d-lg-block">
                         <div class="pic-text-box shadow">
-                            <h2><strong>Eli Hammond</strong></h2>
-                            <h3>Fullstack Web Developer</h3>
+                            <h2><strong>Eli Hammond</strong> Fullstack Web Developer</h2>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="dropdown">
-                            <div class="dropbtn">Login/Register</div>
-                            <div class="dropdown-content">
-                              <a href="{% url 'account_login' %}">Login</a>
-                              <a href="#">Create an account</a>
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="dropdown">
+                                    <div class="dropbtn">
+                                        <div class="icon"><i class="fa-solid fa-user"></i></div>
+                                        Login/Register
+                                    </div>
+                                    <div class="dropdown-content">
+                                      <a href="{% url 'account_login' %}">Login</a>
+                                      <a href="#">Register</a>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
+                            <div class="col-md-6">
+                                <div class="message-box">
+                                    {% if message %}
+                                        <div class="if-message">
+                                            <div class="inbox-number"><strong>5</strong></div>
+                                            <div class="icon"><i class="fa-regular fa-message"></i></div>
+                                        </div>
+                                    {% else %}
+                                        <div class="icon"><i class="fa-regular fa-message"></i></div>
+                                    {% endif %}
+                                    Inbox
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
-                        row 2 column 1
-                    </div>
+                    <div class="col-md-3"></div>
                     <div class="col-md-9">
-                        row 2 column 2
+                        <ul>
+                            <li>
+                                <a href="#"><i class="fa-solid fa-briefcase"></i> Portfolio</a>
+                            </li>
+                            <li>
+                                <a href=""><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                            </li>
+                            <li>
+                                <a href=""><i class="fa-brands fa-github"></i> GitHub</a>
+                            </li>
+                            <li>
+                                <a href=""><i class="fa-solid fa-download"></i> Download CV</a>
+                            </li>
+                        </ul>
                     </div>
                     
                 </div>
