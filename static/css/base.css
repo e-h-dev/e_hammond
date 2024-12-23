@@ -199,3 +199,29 @@ li a:hover{
   text-align: center;
   z-index: 2;
 }
+
+/*  ----------------------home-page styles */
+
+.sub-header{
+  color:rgb(60, 52, 128);
+}
+
+.porfolio-btn{
+  position: relative;
+  top:40px;
+  left:200px;
+  z-index: 1;
+  font-family: var(--main-font);
+  text-align: center;
+  font-size: 1.2rem;
+  border-radius: 10px;
+}
+
+.porfolio-btn a{
+  color: rgb(80, 77, 100);
+  text-decoration: none;
+}
+
+.porfolio-btn:hover{
+  background-color: #f2f2f2;
+}
