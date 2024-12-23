@@ -26,7 +26,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-3">
-                        <a href="#">
+                        <a href="{% url 'home' %}">
                             <div class="logo shadow"></div>
                         </a>
                     </div>
@@ -36,26 +36,37 @@
                                 <div class="dropdown">
                                     <div class="dropbtn">
                                         <div class="icon"><i class="fa-solid fa-user"></i></div>
-                                        Login/Register
-                                    </div>
-                                    <div class="dropdown-content">
-                                      <a href="{% url 'account_login' %}">Login</a>
-                                      <a href="#">Register</a>
+                                        {% if request.user.is_authenticated %}
+                                            Hello {{ user.username|capfirst }}
+                                        {% else %}
+                                            Login/Register
+                                        {% endif %}
+                                        {% if request.user.is_authenticated %}
+                                        <div class="dropdown-content">
+                                            <a href="{% url 'account_logout' %}">Logout</a>
+                                        </div>
+                                        {% else %}
+                                            <div class="dropdown-content">
+                                                <a href="{% url 'account_login' %}">Login</a>
+                                                <a href="#">Register</a>
+                                            </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="message-box">
-                                    {% if message %}
-                                        <div class="if-message">
-                                            <div class="inbox-number"><strong>5</strong></div>
-                                            <div class="icon"><i class="fa-regular fa-message"></i></div>
-                                        </div>
-                                    {% else %}
+                                {% if message %}
+                                    <div class="if-message">
+                                        <div class="inbox-number"><strong>5</strong></div>
+                                        <div class="icon if-message"><i class="fa-regular fa-message"></i></div>
+                                        Inbox
+                                    </div>
+                                {% else %}
+                                    <div class="message-box">
                                         <div class="icon"><i class="fa-regular fa-message"></i></div>
-                                    {% endif %}
-                                    Inbox
-                                </div>
+                                        Inbox
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -65,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row bottom-header">
                     <div class="col-md-7"></div>
                     <div class="col-md-5">
                         <ul>
