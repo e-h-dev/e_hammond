@@ -100,8 +100,8 @@ ul{
 li a{
   color:rgb(80, 77, 100);
   font-family: var(--main-font);
-  font-size: 1.2rem;
-  padding-right: 60px;
+  font-size: 1.1rem;
+  padding-right: 30px;
   float: left;
 }
 
