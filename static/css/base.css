@@ -208,12 +208,15 @@ li a:hover{
 
 .porfolio-btn{
   position: relative;
-  top:40px;
-  left:200px;
+  top:100px;
+  /* left:200px; */
+  right:100px;
   z-index: 1;
   font-family: var(--main-font);
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
+  width:fit-content;
+  border:solid 1px rgba(80, 77, 100, 0.2);
   border-radius: 10px;
 }
 
@@ -223,5 +226,5 @@ li a:hover{
 }
 
 .porfolio-btn:hover{
-  background-color: #f2f2f2;
+  background-color: #d4d4d4;
 }
