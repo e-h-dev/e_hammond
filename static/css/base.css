@@ -267,3 +267,15 @@ li a:hover{
 .porfolio-btn:hover{
   background-color: rgba(212, 212, 212, 0.5);
 }
+
+/* --------------------------------------porfolio page styles */
+
+.portfolio-displays{
+  position: relative;
+  z-index: 2;
+}
+
+.porfolio-image{
+  height: 200px;
+  width:400px;
+}

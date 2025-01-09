@@ -10,11 +10,14 @@
         </div>
         <div class="col-4"></div>
     </div>
-    <div class="row">
+    <div class="row portfolio-displays">
         {% for p in portfolio %}
         <div class="col-6">
             <h6>{{ p.name }}</h6>
-            <img src="{{ p.image.url }}" alt="image">
+            <a href="">
+                <img class="porfolio-image" src="{{ p.image.url }}" alt="image">
+            </a>
+            <p>{{ p.description }}</p>
         </div>
         {% endfor %}
     </div>
