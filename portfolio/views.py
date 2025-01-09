@@ -6,4 +6,8 @@ from .models import Portfolio
 def all_portfolio(request):
     portfolio = Portfolio.objects.all()
 
-    return render(request, "portfolio/portfolio.html", portfolio)
+    context = {
+        'portfolio': portfolio
+    }
+
+    return render(request, "portfolio/portfolio.html", context)
