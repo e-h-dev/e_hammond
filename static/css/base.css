@@ -229,6 +229,19 @@ li a:hover{
   background-color: rgba(212, 212, 212, 0.5);
 }
 
+.review-section{
+  position: relative;
+  z-index: 2;
+  font-family: var(--main-font);
+  color: var(--text-color);
+  padding-top: 30px;
+  padding-left: 20px;
+}
+
+.review-stars{
+  color:rgb(124, 114, 57);
+}
+
 /* --------------------------------------porfolio page styles */
 
 

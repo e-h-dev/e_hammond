@@ -1,6 +1,13 @@
 from django.shortcuts import render
+from .models import Review
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'home/index.html')
+
+    reviews = Review.objects.all()
+
+    context = {
+        'reviews': reviews,
+    }
+    return render(request, 'home/index.html', context)
