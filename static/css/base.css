@@ -12,18 +12,6 @@ header{
 }
 
 
-/* .logo {
-    background-image: url('/media/logo1.png');
-    background-size: contain;
-    height:120px;
-    width:120px;
-    border-radius: 10px;
-    position: relative;
-    top:20px;
-    z-index: 9999999999;
-} */
-
-
 .logo-logo{
   background-image: url("/media/small-logo.png");
   height:50px;
@@ -80,27 +68,6 @@ a:hover{
     position: fixed;
 }
 
-/* .small-box{
-    background-image: url('/media/image8.jpg') ;
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.5;
-    height:400px;
-    width:60vw;
-    border-radius: 20px;
-    z-index: -9999999999999999;
-} */
-
-/* .pic{
-    background-image: url('/media/image6.jpg') ;
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.9;
-    height:400px;
-    width:300px;
-    border-radius: 20px;
-} */
-
 .pic-text-box{
     z-index: 1;
     position: relative;
@@ -115,7 +82,6 @@ a:hover{
     font-weight:bold;
     color: rgb(80, 77, 100);
     display:none;
-    /* letter-spacing: 2px; */
 }
 
 .info-box{
@@ -128,12 +94,6 @@ a:hover{
     width:700px;
     padding:30px;
     font-family: var(--main-font);
-}
-
-button{
-    /* z-index: 1;
-    bottom:200px; */ 
-    display: none;
 }
 
 ul{
