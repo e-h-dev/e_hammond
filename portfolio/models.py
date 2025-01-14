@@ -9,6 +9,7 @@ class Portfolio(models.Model):
     name = models.CharField(max_length=254)
     website_url = models.URLField(max_length=1250, null=True, blank=True)
     description = models.TextField()
+    mini_description = models.TextField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):

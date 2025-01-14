@@ -17,10 +17,33 @@
             <a class="image-position" href="{{ p.website_url }}" target="_blank">
                 <img class="porfolio-image" src="{{ p.image.url }}" alt="image">
             </a>
-            <p class="description-p">{{ p.description }}</p>   
+            <p class="mini-description">{{ p.mini_description }}</p> 
+            <p class="read-more-button">Read more</p>
+            <p class="description-p">{{ p.description }}</p>
+            <p class="read-less-button">Read less</p>   
         </div>
         {% endfor %}
     </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script>
+
+        $('.read-more-button').click( function(){
+            $('.description-p').css("display", "block");
+            $('.mini-description').css("display", "none");
+            $('.read-more-button').css("display", "none");
+            $('.read-less-button').css("display", "block");
+        })
+
+        $('.read-less-button').click( function(){
+            $('.description-p').css("display", "none");
+            $('.mini-description').css("display", "block");
+            $('.read-more-button').css("display", "block");
+            $('.read-less-button').css("display", "none");
+        })
+    </script>
 {% endblock %}
