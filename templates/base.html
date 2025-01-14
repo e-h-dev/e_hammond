@@ -43,7 +43,9 @@
                                     <div class="dropbtn">
                                         <div class="icon"><i class="fa-solid fa-user"></i></div>
                                         {% if request.user.is_authenticated %}
-                                            Hello {{ user.username|capfirst }}
+                                            <div class="hello">
+                                                Hello {{ user.username|capfirst }}
+                                            </div>
                                         {% else %}
                                             Login/Register
                                         {% endif %}
