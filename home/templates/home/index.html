@@ -19,6 +19,58 @@
             <div class="btn porfolio-btn shadow"><a href="{% url 'portfolio' %}">Check out my Portfilio</a></div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-4 review-section">
+            <h3>Reviews ({{ reviews.count }})</h3>
+            {% for review in reviews %}
+            <div class="user-review shadow">
+                <div>
+                    Review by: {{ review.name }}
+                </div>
+                <div class="review-stars">
+                    Product rating:
+                    {% if review.rating == 1 %}
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                {% elif review.rating == 2 %}
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                {% elif review.rating == 3 %}
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                {% elif review.rating == 4 %}
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                {% else %}
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                {% endif %}
+                </div>
+                    <div class="review">{{ review.review }}</div>
+                    <div class="time-date">
+                        Reviewed {{ review.date }} @ {{ review.time }}
+                    </div>
+                    <hr>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-8"></div>
+    </div>
 </div>
 
 {% endblock %}
