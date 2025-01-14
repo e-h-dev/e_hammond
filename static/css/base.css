@@ -295,9 +295,21 @@ li a:hover{
   color:var(--text-color);
 }
 
-.description-p{
+/* .description-p{
   display:none;
-}
+} */
+
+/* .description-box{
+  display: none;
+  position: relative;
+  left:20%;
+  top:20%;
+  height:60%;
+  width:60%;
+  border-radius: 20px;
+  z-index: 10;
+  background-image: linear-gradient(to right, #fafafc, rgba(103, 102, 146, 0.1), rgba(80, 77, 100, 0.2));
+} */
 
 .read-more-button, .read-less-button{
   position: relative;

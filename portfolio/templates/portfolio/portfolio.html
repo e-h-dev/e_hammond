@@ -17,10 +17,10 @@
             <a class="image-position" href="{{ p.website_url }}" target="_blank">
                 <img class="porfolio-image" src="{{ p.image.url }}" alt="image">
             </a>
-            <p class="mini-description">{{ p.mini_description }}</p> 
-            <p class="read-more-button">Read more</p>
-            <p class="description-p">{{ p.description }}</p>
-            <p class="read-less-button">Read less</p>   
+            <p class="mini-description">{{ p.mini_description }}</p>
+            <a href="#read-btn{{ p.id }}" class="read-more-button">Read more</a>
+            {% include 'includes/info.html' %}
+            <p class="read-less-button">Read less</p>
         </div>
         {% endfor %}
     </div>
@@ -30,20 +30,26 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script>
+    <!-- <script>
 
-        $('.read-more-button').click( function(){
+        function createNum(x){
+            for (let i = 0; i < 1000; i++) {
+            x[i];
+            }
+        }
+
+        $('#floral-design').click( function(){
             $('.description-p').css("display", "block");
             $('.mini-description').css("display", "none");
-            $('.read-more-button').css("display", "none");
+            $('#floral-design').css("display", "none");
             $('.read-less-button').css("display", "block");
         })
 
         $('.read-less-button').click( function(){
             $('.description-p').css("display", "none");
             $('.mini-description').css("display", "block");
-            $('.read-more-button').css("display", "block");
+            $('#remove-button').css("display", "block");
             $('.read-less-button').css("display", "none");
         })
-    </script>
+    </script> -->
 {% endblock %}
