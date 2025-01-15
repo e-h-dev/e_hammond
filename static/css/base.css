@@ -208,6 +208,18 @@ li a:hover{
 
 /*  ----------------------home-page styles */
 
+.custom-nav{
+  color:rgb(42, 40, 51);
+  font-family: var(--main-font);
+  padding:10px;
+  border-radius: 10px;
+}
+
+.custom-nav:hover{
+  color:#000;
+  background-color: rgb(145, 143, 160);
+}
+
 .sub-header{
   color:rgb(60, 52, 128);
 }
