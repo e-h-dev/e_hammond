@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Reviews
 
+
 # Create your views here.
 
 def index(request):
@@ -12,3 +13,5 @@ def index(request):
     }
     
     return render(request, 'home/index.html', context)
+
+

@@ -1,5 +1,5 @@
 asgiref==3.8.1
-Django==3.2.25
+Django==5.1.5
 django-allauth==0.55.0
 oauthlib==3.2.2
 pillow==11.1.0
