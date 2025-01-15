@@ -212,6 +212,15 @@ li a:hover{
   color:rgb(60, 52, 128);
 }
 
+.ci-link a{
+  color:var(--main-font);
+  font-weight: bolder;
+}
+
+.ci-link a:hover{
+  font-weight: 500;
+}
+
 .porfolio-btn{
   position: relative;
   top:100px;
