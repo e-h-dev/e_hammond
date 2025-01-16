@@ -281,6 +281,43 @@ li a:hover{
   padding-top: 5px;
 }
 
+.review-form{
+  position: relative;
+  z-index: 2;
+}
+
+.user-input-remove{
+  display:none
+}
+
+input[type="radio"]{
+  -webkit-appearance: none;
+  appearance: none;
+  /* color: rgb(124, 114, 57);
+  width: 1.15em;
+  height: 1.15em; */
+  /* border: 0.15em solid rgb(124, 114, 57); */
+  /* border-radius: 50%; */
+}
+
+/* input[type="radio"]:checked{
+  background-color: rgb(124, 114, 57);
+  border-radius: 50%;
+} */
+
+.fa-star{
+  color:rgb(124, 114, 57);
+  font-size: 1.2rem;
+}
+
+
+/* .radio-button{
+  border: none;
+  height:20px;
+  width:20px;
+  background-color: red;
+} */
+
 /* --------------------------------------porfolio page styles */
 
 
