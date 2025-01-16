@@ -22,7 +22,7 @@
     </div>
     <div class="row">
         <div class="col-4 review-section">
-            <a href="{% url 'create_review' %}">Write a Review</a>
+            <a href="{% url 'create_review' %}" class="button add-edit-button">Write a Review</a>
             <h3>Reviews ({{ reviews.count }})</h3>
             {% for review in reviews %}
             <div class="user-review shadow">
@@ -30,7 +30,7 @@
                     Review by: {{ review.name }}
                 </div>
                 <div class="review-stars">
-                    Product rating:
+                    Rating:
                     {% if review.rating == 1 %}
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-regular fa-star"></i>
