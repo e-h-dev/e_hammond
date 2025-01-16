@@ -26,20 +26,12 @@
                     <div>
                         <label for="id_rating">Rate between 1 and 5 stars</label><br>
 
-                        <input type="radio" class="fa-regular fa-star" id="id_rating" name="rating" value="1">
-                        <input type="radio" class="fa-regular fa-star" id="id_rating" name="rating" value="2">
-                        <input type="radio" class="fa-regular fa-star" id="id_rating" name="rating" value="3">
-                        <input type="radio" class="fa-regular fa-star" id="id_rating" name="rating" value="4">
-                        <input type="radio" class="fa-regular fa-star" id="id_rating" name="rating" value="5">
+                        <input type="radio" class="fa-regular fa-star star-1 star-1-1 star-1-2 star-1-3 star-1-4" id="id_rating" name="rating" value="1">
+                        <input type="radio" class="fa-regular fa-star star-2 star-1-2 star-1-3 star-1-4" id="id_rating" name="rating" value="2">
+                        <input type="radio" class="fa-regular fa-star star-3 star-1-3 star-1-4" id="id_rating" name="rating" value="3">
+                        <input type="radio" class="fa-regular fa-star star-4 star-1-4" id="id_rating" name="rating" value="4">
+                        <input type="radio" class="fa-regular fa-star star-5" id="id_rating" name="rating" value="5">
                         <br>
-
-                        <!-- <div>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div> -->
 
                         <label for="id_review">Leave your review below</label><br>
                         <textarea name="review" id="id_review"></textarea>
@@ -52,4 +44,28 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    <script>
+        $('.star-1').click(function(){
+            $('.star-1-1').css('font-weight', '600')
+        })
+
+        $('.star-2').click(function(){
+            $('.star-1-2').css('font-weight', '600')
+        })
+
+        $('.star-3').click(function(){
+            $('.star-1-3').css('font-weight', '600')
+        })
+
+        $('.star-4').click(function(){
+            $('.star-1-4').css('font-weight', '600')
+        })
+
+        $('.star-5').click(function(){
+            $('.fa-star').css('font-weight', '600')
+        })
+    </script>
 {% endblock %}
