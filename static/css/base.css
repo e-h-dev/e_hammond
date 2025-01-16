@@ -135,12 +135,7 @@ li a:hover{
     cursor: pointer;
   }
   
-  /* The container <div> - needed to position the dropdown content */
-  /* .dropdown {
-    position: relative;
-    display: inline-block;
-    z-index: 999999999999;
-  } */
+
   
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
@@ -204,6 +199,36 @@ li a:hover{
   top:2px;
   text-align: center;
   z-index: 2;
+}
+
+/*---------------------------- overall styles */
+
+.button{
+  font-family: var(--main-font);
+  color: var(--text-color);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding:10px;
+  margin:10px
+}
+
+.add-edit-btn{
+  background-color: rgba(80, 77, 100, 0.3);
+}
+
+.cancel-btn{
+  background-color: rgba(95, 33, 33, 0.3);
+}
+
+.add-edit-btn:hover{
+  background-color: var(--text-color);
+  color: #f9f9f9;
+}
+
+.cancel-btn:hover{
+  background-color: var(--text-color);
+  color: #cf99ac;
 }
 
 /*  ----------------------home-page styles */
@@ -284,39 +309,38 @@ li a:hover{
 .review-form{
   position: relative;
   z-index: 2;
+  font-family: var(--main-font);
+  color: var(--text-color);
+  font-size: 1.1rem;
 }
 
 .user-input-remove{
   display:none
 }
 
+label{
+  margin-top:20px;
+}
+
 input[type="radio"]{
   -webkit-appearance: none;
   appearance: none;
-  /* color: rgb(124, 114, 57);
-  width: 1.15em;
-  height: 1.15em; */
-  /* border: 0.15em solid rgb(124, 114, 57); */
-  /* border-radius: 50%; */
 }
-
-/* input[type="radio"]:checked{
-  background-color: rgb(124, 114, 57);
-  border-radius: 50%;
-} */
 
 .fa-star{
   color:rgb(124, 114, 57);
   font-size: 1.2rem;
 }
 
-
-/* .radio-button{
+.text-area{
   border: none;
-  height:20px;
-  width:20px;
-  background-color: red;
-} */
+  outline: none;
+  border-radius: 10px;
+  padding:20px;
+  font-family: var(--main-font);
+  color: var(--text-color);
+  background-color: #f9f9f9;
+}
 
 /* --------------------------------------porfolio page styles */
 
