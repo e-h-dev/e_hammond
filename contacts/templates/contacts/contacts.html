@@ -12,25 +12,34 @@
         <div class="col-4"></div>
     </div>
     <div class="row">
-        <div class="col-3"></div>
-        <div class="col-8"></div>
+        <div class="col-3 inbox-margin shadow">
+            <div class="inbox-header">
+                Inbox ({{ inbox.count}})
+            </div>
+        </div>
+        {% for i in inbox %}
+        <div class="col-8">
+            <div {% if i.new_message %}class="new-message"{% endif %}>
+                <div class="row message-container shadow">
+                    <div class="col-3">
+                        <p class="inbox-name">{{ i.name }}</p>
+                    </div>
+                    <div class="col-6">
+                        {% if i.subject %}
+                        <p class="inbox-subject">{{ i.subject }}</p>
+                        {% else %}
+                        <p class="inbox-subject">no subject</p>
+                        {% endif %}
+                    </div>
+                    <div class="col-3">
+                        <p class="inbox-date-time">{{ i.date }} {{ i.time }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col-1"></div>
     </div>
-    <div class="inbox-style">
-        {% for i in inbox %}
-        
-            <h6>{{ i.name }}</h6>
-            <p>{{ i.email }}</p>
-            <p>{{ i.phone }}</p>
-            <p>{{ i.subject }}</p>
-            <p>{{ i.message }}</p>
-            <p>{{ i.date }}</p>
-            <p>{{ i.time }}</p>
-            <p>{{ i.read }}</p>
-
         {% endfor %}
-    </div>
-    
 </div>
 
 {% endblock %}

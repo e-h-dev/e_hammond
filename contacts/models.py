@@ -14,5 +14,8 @@ class Contacts(models.Model):
     message = models.TextField()
     date = models.DateField(auto_now=True)
     time = models.TimeField(auto_now=True)
-    read = models.BooleanField(default=False)
+    new_message = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
     
