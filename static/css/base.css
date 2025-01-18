@@ -429,3 +429,13 @@ input[type="radio"]{
 .col-md-6{
   width:90%;
 }
+
+/*------------------ inbox page */
+
+.inbox-style{
+  height:100px;
+  width:300px;
+  position: relative;
+  z-index: 2;
+}
+

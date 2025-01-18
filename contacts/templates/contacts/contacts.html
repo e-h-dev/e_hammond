@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block extra_title %}- Inbox{% endblock %}
-{% block custom_style %}<span class="custom-nav shadow"><i class="fa-solid fa-briefcase"></i> Portfolio</span>{% endblock %}
+
 {% block content %}
 <div class="container-fluid">
     <div class="row">
@@ -11,6 +11,26 @@
         </div>
         <div class="col-4"></div>
     </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-8"></div>
+        <div class="col-1"></div>
+    </div>
+    <div class="inbox-style">
+        {% for i in inbox %}
+        
+            <h6>{{ i.name }}</h6>
+            <p>{{ i.email }}</p>
+            <p>{{ i.phone }}</p>
+            <p>{{ i.subject }}</p>
+            <p>{{ i.message }}</p>
+            <p>{{ i.date }}</p>
+            <p>{{ i.time }}</p>
+            <p>{{ i.read }}</p>
+
+        {% endfor %}
+    </div>
+    
 </div>
 
 {% endblock %}
