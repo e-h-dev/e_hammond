@@ -16,6 +16,5 @@ class Contacts(models.Model):
     time = models.TimeField(auto_now=True)
     new_message = models.BooleanField(default=True)
 
-    def __str__(self):
-        return self.name
+
     

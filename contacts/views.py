@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, reverse, get_object_or_404
 from .models import Contacts
 from .forms import ContactForm
 
@@ -20,10 +20,12 @@ def contacts(request):
 def open_message(request, contact_id):
     """ A view to show individual products and details """
 
-    inbox = get_object_or_404(Contacts, contact_id,)
-
+    inbox = get_object_or_404(Contacts, pk=contact_id)
 
     template = 'contacts/open_message.html'
+
+    #return render(reverse, template, ('contacts'))
+
 
     context = {
         'inbox': inbox

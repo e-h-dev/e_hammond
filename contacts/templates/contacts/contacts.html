@@ -20,7 +20,7 @@
         {% for i in inbox %}
         <div class="col-8">
             <div {% if i.new_message %}class="new-message"{% endif %}>
-                <a href="{% url 'open_message' contact.id %}">
+                <a href="{% url 'open_message' i.id %}">
                     <div class="row message-container shadow">
                         <div class="col-3">
                             <p class="inbox-name">{{ i.name }}</p>
