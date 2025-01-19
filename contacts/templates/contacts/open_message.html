@@ -12,41 +12,44 @@
         <div class="col-4"></div>
     </div>
     <div class="row">
-        <div class="col-3 inbox-margin shadow">
-            <div class="inbox-header">
-                Inbox ({{ inbox.count}})
-            </div>
+        <div class="col-1">
+            
         </div>
-        {% for i in inbox %}
-        <div class="col-8">
-            <div {% if i.new_message %}class="new-message"{% endif %}>
-                <div class="row message-container shadow">
+        <div class="col-10">
+            
+                <div class="row read-message">
                     <div class="col-3">
-                        <p class="inbox-name">{{ i.name }}</p>
+                        <p class="inbox-name">{{ inbox.name }}</p>
                     </div>
                     <div class="col-6">
-                        {% if i.subject %}
-                        <p class="inbox-subject">{{ i.subject }}</p>
+                        {% if inbox.subject %}
+                        <p class="inbox-subject">{{ inbox.subject }}</p>
                         {% else %}
                         <p class="inbox-subject">no subject</p>
                         {% endif %}
                     </div>
                     <div class="col-3">
-                        <p class="inbox-date-time">{{ i.date }} {{ i.time }}</p>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <p class="message-display">
+                                {{ inbox.message }}
+                            </p>
+                        </div>
+                        <div class="col-4">
+                            <p class="inbox-date-time main-message-date-time">
+                                Recieved:
+                                {{ inbox.date }} {{ inbox.time }}
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <p class="message-display">
-                            {{ i.message }}
-                        </p>
-                    </div>
-                </div>
-            </div>
+                
+            
         </div>
         <div class="col-1"></div>
     </div>
-        {% endfor %}
 </div>
 
 {% endblock %}

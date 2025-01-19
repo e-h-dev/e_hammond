@@ -20,21 +20,24 @@
         {% for i in inbox %}
         <div class="col-8">
             <div {% if i.new_message %}class="new-message"{% endif %}>
-                <div class="row message-container shadow">
-                    <div class="col-3">
-                        <p class="inbox-name">{{ i.name }}</p>
+                <a href="{% url 'open_message' contact.id %}">
+                    <div class="row message-container shadow">
+                        <div class="col-3">
+                            <p class="inbox-name">{{ i.name }}</p>
+                        </div>
+                        <div class="col-6">
+                            {% if i.subject %}
+                            <p class="inbox-subject">{{ i.subject }}</p>
+                            {% else %}
+                            <p class="inbox-subject">no subject</p>
+                            {% endif %}
+                            
+                        </div>
+                        <div class="col-3">
+                            <p class="inbox-date-time">{{ i.date }} {{ i.time }}</p>
+                        </div>
                     </div>
-                    <div class="col-6">
-                        {% if i.subject %}
-                        <p class="inbox-subject">{{ i.subject }}</p>
-                        {% else %}
-                        <p class="inbox-subject">no subject</p>
-                        {% endif %}
-                    </div>
-                    <div class="col-3">
-                        <p class="inbox-date-time">{{ i.date }} {{ i.time }}</p>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
         <div class="col-1"></div>

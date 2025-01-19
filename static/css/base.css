@@ -480,3 +480,14 @@ input[type="radio"]{
   text-align: right;
 }
 
+
+.read-message{
+  background-color: #f9f9f9;
+  position: relative;
+  z-index: 2;
+}
+
+.main-message-date-time{
+  text-align: right;
+}
+
