@@ -16,6 +16,7 @@
             
         </div>
         <div class="col-10">
+            {% if user == inbox.send_to %}
             <div class="read-message">
                 <div class="row">
                     <div class="col-3">
@@ -47,6 +48,7 @@
                     </div>
                 </div>
             </div> 
+            {% endif %}
         </div>
         <div class="col-1"></div>
     </div>

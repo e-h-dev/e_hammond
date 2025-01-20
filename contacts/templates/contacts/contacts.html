@@ -18,6 +18,7 @@
     <div class="row">
         <div class="col-3">
         </div>
+        {% if user == i.send_to %}
         <div class="col-8">
             <div {% if i.new_message %}class="new-message"{% endif %}>
                 <a href="{% url 'open_message' i.id %}">
@@ -40,6 +41,7 @@
                 </a>
             </div>
         </div>
+        {% endif %}
         <div class="col-1"></div>
     </div>
     {% endfor %}
