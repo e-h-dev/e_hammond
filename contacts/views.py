@@ -34,6 +34,28 @@ def open_message(request, contact_id):
     return render(request, template, context)
 
 
+
+def compose_message(request):
+    """
+    A view to send a message
+    """
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('contacts'))
+
+    else:
+        form = ContactForm()
+
+    template = 'contacts/compose_message.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
 # def edit_contact(request, contact_id):
 
 
