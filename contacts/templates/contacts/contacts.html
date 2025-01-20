@@ -11,13 +11,13 @@
         </div>
         <div class="col-4"></div>
     </div>
+    <div class="inbox-header">
+        Inbox ({{ inbox.count}})
+    </div>
+    {% for i in inbox %}
     <div class="row">
-        <div class="col-3 inbox-margin shadow">
-            <div class="inbox-header">
-                Inbox ({{ inbox.count}})
-            </div>
+        <div class="col-3">
         </div>
-        {% for i in inbox %}
         <div class="col-8">
             <div {% if i.new_message %}class="new-message"{% endif %}>
                 <a href="{% url 'open_message' i.id %}">
@@ -42,7 +42,7 @@
         </div>
         <div class="col-1"></div>
     </div>
-        {% endfor %}
+    {% endfor %}
 </div>
 
 {% endblock %}

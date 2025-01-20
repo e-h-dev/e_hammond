@@ -16,37 +16,37 @@
             
         </div>
         <div class="col-10">
-            
-                <div class="row read-message">
+            <div class="read-message">
+                <div class="row">
                     <div class="col-3">
-                        <p class="inbox-name">{{ inbox.name }}</p>
+                        <h4 class="inbox-name">{{ inbox.name }}</h4>
                     </div>
                     <div class="col-6">
                         {% if inbox.subject %}
-                        <p class="inbox-subject">{{ inbox.subject }}</p>
+                        <h5 class="inbox-subject">{{ inbox.subject }}</h5>
                         {% else %}
-                        <p class="inbox-subject">no subject</p>
+                        <h5 class="inbox-subject">no subject</h5>
                         {% endif %}
                     </div>
                     <div class="col-3">
                         
                     </div>
-                    <div class="row">
-                        <div class="col-8">
-                            <p class="message-display">
-                                {{ inbox.message }}
-                            </p>
-                        </div>
-                        <div class="col-4">
-                            <p class="inbox-date-time main-message-date-time">
-                                Recieved:
-                                {{ inbox.date }} {{ inbox.time }}
-                            </p>
-                        </div>
+                    
+                </div>
+                <div class="row message-row">
+                    <div class="col-8 message-display">
+                        <p>
+                            {{ inbox.message }}
+                        </p>
+                    </div>
+                    <div class="col-4">
+                        <p class="inbox-date-time main-message-date-time">
+                            Recieved:
+                            {{ inbox.date }} {{ inbox.time }}
+                        </p>
                     </div>
                 </div>
-                
-            
+            </div> 
         </div>
         <div class="col-1"></div>
     </div>

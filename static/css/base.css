@@ -482,12 +482,33 @@ input[type="radio"]{
 
 
 .read-message{
-  background-color: #f9f9f9;
+  color:var(--text-color);
+  font-family: var(--main-font);
+  padding:20px;
+  border-radius: 10px;
+  background-color: rgba(80, 77, 100, 0.1);
   position: relative;
   z-index: 2;
 }
 
+.message-row{
+  border-top:1px solid rgba(80, 77, 100, 0.5);
+  margin:5px;
+  padding-top:20px;
+}
+
+.message-display{
+  width:100%;
+  text-align: justify;
+}
+
 .main-message-date-time{
   text-align: right;
+}
+
+.main-message-date-time{
+  position: relative;
+  top:90%;
+  font-weight: 500;
 }
 
