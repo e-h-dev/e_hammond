@@ -15,6 +15,21 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <!-- form to send a message -->
+                <form action="{% url 'contacts' %}" method="POST" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div>
+                        <input type="text" id="id_name" name="name" value="{{ user.username }}" class="user-input-remove">
+                    </div>
+                    <label for="id_subject">Subject</label>
+                    <input type="text" id="id_subject" name="subject">
+                    <label for="id_message">Your Message</label>
+                    <textarea name="message" id="id_message"></textarea>
+                    
+                    <div class="text-right">
+                        <a href="{% url 'home' %}" class="shadow button cancel-btn">Cancel</a>
+                        <button class="shadow button add-edit-btn" type="submit">Send message</button>
+                    </div>
+                </form>
                 
             </div>
         </div>

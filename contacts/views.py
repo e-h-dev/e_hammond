@@ -6,10 +6,21 @@ from .forms import ContactForm
 
 def contacts(request):
 
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('home'))
+
+
+    else:
+        form = ContactForm()
+
     inbox = Contacts.objects.all()
 
     context = {
-        'inbox': inbox
+        'inbox': inbox,
+        'form': form
     }
 
     return render(request, 'contacts/contacts.html', context)
@@ -39,21 +50,22 @@ def compose_message(request):
     """
     A view to send a message
     """
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect(reverse('contacts'))
+    # if request.method == 'POST':
+    #     form = ContactForm(request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #         return redirect(reverse('home'))
 
-    else:
-        form = ContactForm()
+
+    # else:
+    #     form = ContactForm()
 
     template = 'contacts/compose_message.html'
-    context = {
-        'form': form,
-    }
+    # context = {
+    #     'form': form,
+    # }
 
-    return render(request, template, context)
+    return render(request, template)
 
 
 # def edit_contact(request, contact_id):
