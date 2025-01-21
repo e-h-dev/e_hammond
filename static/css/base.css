@@ -484,6 +484,45 @@ input[type="radio"]{
   text-align: right;
 }
 
+.contact-form{
+  background-color: #f9f9f9;
+  position: relative;
+  left:20%;
+  border-radius: 10px;
+  width:70vw;
+  height:60vh;
+}
+
+.main-compose-message-section{
+  position: inherit;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  
+}
+
+.input, .textarea{
+  color:var(--text-color);
+  font-family: var(--main-font);
+  border:none;
+  outline: none;
+  width:98%;
+  padding-left: 20px;
+  margin:5px;
+}
+
+.input{
+  height:3rem;
+  border-bottom: 1px solid rgba(80, 77, 100, 0.5);
+}
+
+.textarea{
+  height:16rem;
+  resize: none;
+}
+
+.input:focus{
+  background-color: rgba(212, 212, 212, 0.2);
+}
 
 .read-message{
   color:var(--text-color);
