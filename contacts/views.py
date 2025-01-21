@@ -7,13 +7,13 @@ from .forms import ContactForm
 def contacts(request):
 
 
-    inbox = Contacts.objects.all()
+    # inbox = Contacts.objects.all()
 
-    context = {
-        'inbox': inbox,
-    }
+    # context = {
+    #     'inbox': inbox,
+    # }
 
-    return render(request, 'contacts/contacts.html', context)
+    return render(request, 'contacts/contacts.html')
 
 
 

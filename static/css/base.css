@@ -179,6 +179,14 @@ li a:hover{
   z-index: 2;
 }
 
+.message-box a{
+  color:var(--text-color);
+}
+
+.message-box a:hover{
+  color:#000;
+}
+
 .icon{
   position: inherit;
   text-align: center;

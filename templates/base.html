@@ -72,15 +72,16 @@
                                 {% if message %}
                                     <div class="if-message">
                                         <div class="inbox-number"><strong>5</strong></div>
-                                        <div class="icon if-message"><i class="fa-regular fa-message"></i></div>
+                                        <div class="icon if-message"><i class="fa-regular fa-envelope-open"></i></div>
                                         Inbox
                                     </div>
                                 {% else %}
                                     <div class="message-box">
                                         <a href="{% url 'contacts' %}">
-                                            <div class="icon"><i class="fa-regular fa-message"></i></div>
-                                        Inbox
+                                            <div class="icon"><i class="fa-regular fa-envelope-open"></i></div>
+                                            Inbox ({{ inbox.count }})
                                         </a>
+                                        
                                     </div>
                                 {% endif %}
                             </div>
