@@ -23,22 +23,22 @@
         </div>
         
         <div class="col-8">
-            <div {% if i.new_message %}class="new-message"{% endif %}>
+            <div {% if i.read %}class="opened-message"{% endif %}>
                 <a href="{% url 'open_message' i.id %}">
                     <div class="row message-container shadow">
                         <div class="col-3">
-                            <p class="inbox-name">{{ i.name }}</p>
+                            <p class="inbox-name new-message">{{ i.name }}</p>
                         </div>
                         <div class="col-6">
                             {% if i.subject %}
-                            <p class="inbox-subject">{{ i.subject }}</p>
+                            <p class="inbox-subject new-message">{{ i.subject }}</p>
                             {% else %}
-                            <p class="inbox-subject">no subject</p>
+                            <p class="inbox-subject new-message">no subject</p>
                             {% endif %}
                             
                         </div>
                         <div class="col-3">
-                            <p class="inbox-date-time">{{ i.date }} {{ i.time }}</p>
+                            <p class="inbox-date-time new-message">{{ i.date }} {{ i.time }}</p>
                         </div>
                     </div>
                 </a>

@@ -466,6 +466,10 @@ input[type="radio"]{
   font-weight: bolder;
 }
 
+.opened-message{
+  font-weight: 200;
+}
+
 .inbox-name{
   font-size: 1.1rem;
 }

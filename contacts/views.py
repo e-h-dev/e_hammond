@@ -1,4 +1,4 @@
-from django.shortcuts import render, reverse, get_object_or_404
+from django.shortcuts import render, reverse, redirect, get_object_or_404
 from .models import Contacts
 from .forms import ContactForm
 
@@ -6,21 +6,11 @@ from .forms import ContactForm
 
 def contacts(request):
 
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect(reverse('home'))
-
-
-    else:
-        form = ContactForm()
 
     inbox = Contacts.objects.all()
 
     context = {
         'inbox': inbox,
-        'form': form
     }
 
     return render(request, 'contacts/contacts.html', context)
@@ -50,20 +40,23 @@ def compose_message(request):
     """
     A view to send a message
     """
-    # if request.method == 'POST':
-    #     form = ContactForm(request.POST)
-    #     if form.is_valid():
-    #         form.save()
-    #         return redirect(reverse('home'))
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('contacts'))
+        else:
+            print(form.errors.as_data())
 
 
-    # else:
-    #     form = ContactForm()
+
+    else:
+        form = ContactForm()
 
     template = 'contacts/compose_message.html'
-    # context = {
-    #     'form': form,
-    # }
+    context = {
+        'form': form,
+    }
 
     return render(request, template)
 
