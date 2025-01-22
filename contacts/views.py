@@ -21,11 +21,12 @@ def contacts(request):
 def open_message(request, contact_id):
     """ A view to show individual products and details """
 
-    inbox = get_object_or_404(Contacts, pk=contact_id)
+    inbox = Contacts.objects.get(id=contact_id)
+    inbox.read = True
+    inbox.save()
+
 
     template = 'contacts/open_message.html'
-
-    #return render(reverse, template, ('contacts'))
 
 
     context = {
