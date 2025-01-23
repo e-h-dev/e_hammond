@@ -449,6 +449,15 @@ input[type="radio"]{
   font-weight: 600;
 }
 
+.inbox-subheader{
+  position: relative;
+  z-index: 2;
+  font-size: 1 rem;
+  font-weight: 300;
+  font-family: var(--main-font);
+  color: var(--main-font);
+}
+
 .inbox-margin{
   background-color: rgba(80, 77, 100, 0.1);
   position: relative;

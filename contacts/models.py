@@ -13,8 +13,8 @@ class Contacts(models.Model):
     email = models.EmailField()
     phone = models.IntegerField()
     message = models.TextField()
-    date = models.DateField(auto_now=True)
-    time = models.TimeField(auto_now=True)
+    date = models.DateField(auto_now_add=True)
+    time = models.TimeField(auto_now_add=True)
     read = models.BooleanField(default=False)
 
 
