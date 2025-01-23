@@ -5,12 +5,28 @@ def contacts_inbox(request):
 
     inbox = Contacts.objects.all()
 
-    #read = inbox.read
+    unread_messages = Contacts.objects.filter(read=False).count()
 
-    # if Contacts.name:
-    #     print(Contacts.objects.name)
-    # else:
-    #     print('nothing to show')
+    print(unread_messages)
+
+    
+    message_count = len(inbox)
+
+    # print(int(message_count))
+    
+    context = {
+        'inbox': inbox,
+        'message_count': message_count,
+        'unread_messages': unread_messages
+    }
+
+    return context
+
+
+
+
+
+    # read = inbox.read
    
     # for i in inbox:
     #     x = i.read
@@ -18,18 +34,8 @@ def contacts_inbox(request):
     #         my_num = x
     #     else:
     #         my_num = 'hello world!'
-    #     print(my_num)
-        
-
-
-
-    message_count = len(inbox)
-
-    # print(int(message_count))
-    
-    context = {
-        'inbox': inbox,
-        'message_count': message_count
-    }
-
-    return context
+    #     #print(my_num)
+    #     z = []
+    #     for my in my_num:
+    #         z.append(my)
+    #         print(z)

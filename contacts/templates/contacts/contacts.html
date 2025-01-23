@@ -12,7 +12,10 @@
         <div class="col-4"></div>
     </div>
     <div class="inbox-header">
-        Inbox ({{ inbox.count}})
+        Inbox ({{ unread_messages }})
+    </div>
+    <div class="inbox-subheader">
+        Total Messages = {{ message_count }}
     </div>
     <div class="inbox-header">
         <a href="{% url 'compose_message' %}">Compose message</a>
