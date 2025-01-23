@@ -20,7 +20,7 @@ def contacts(request):
 
 
 def open_message(request, contact_id):
-    """ A view to show individual products and details """
+    """ A view open and display contact message """
 
     inbox = Contacts.objects.get(id=contact_id)
     inbox.read = True
@@ -63,27 +63,12 @@ def compose_message(request):
     return render(request, template)
 
 
-# def edit_contact(request, contact_id):
+
+def delete_message(request, contact_id):
+    """ A view to delete contacts """
+
+    inbox = Contacts.objects.get(id=contact_id)
+    inbox.delete()
 
 
-#     contact = get_object_or_404(Contacts, pk=contact_id)
-
-#     if request.method == 'POST':
-#         form = ContactForm(request.POST, request.FILES, instance=contact)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('contacts')
-        
-#     else:
-
-#         form = ContactForm(instance=contact)
-    
-#     template = 'contacts/contacts.html'
-#     context = {
-#         'form': form,
-#         'contact': contact,
-#     }
-
-#     return render(request, template, context)
-
-
+    return redirect(reverse('contacts'))

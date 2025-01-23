@@ -6,4 +6,6 @@ urlpatterns = [
     path('', views.contacts, name='contacts'),
     path('compose/', views.compose_message, name='compose_message'),
     path('<int:contact_id>', views.open_message, name='open_message'),
+    path('delete/<int:contact_id>/',
+         views.delete_message, name='delete_message'),
 ]

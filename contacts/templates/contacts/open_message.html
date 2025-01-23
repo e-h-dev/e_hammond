@@ -46,6 +46,9 @@
                             {{ inbox.date }} {{ inbox.time }}
                         </p>
                     </div>
+                    <div class="delete-message">
+                        <div id="delete">Delete</div>
+                    </div>
                 </div>
             </div> 
             
@@ -54,4 +57,13 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+    <script>
+        $('#delete').click(function(){
+            $('#delete').html('Are you sure you want todelete this message: <a href="{% url "delete_message" inbox.id %}">Yes</a> <a href="{% url "contacts" %}">No</a>')
+        })
+
+    </script>
 {% endblock %}
