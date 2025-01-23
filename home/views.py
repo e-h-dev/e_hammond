@@ -7,7 +7,7 @@ from .forms import ReviewForm
 
 def index(request):
 
-    reviews = Reviews.objects.all().order_by('-rating')
+    reviews = Reviews.objects.all().order_by('-rating', '-date', '-time')
 
     context = {
         'reviews': reviews,
