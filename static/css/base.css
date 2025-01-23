@@ -572,3 +572,7 @@ input[type="radio"]{
   font-weight: 500;
 }
 
+.unread{
+  position: relative;
+  z-index: 2;
+}

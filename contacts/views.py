@@ -37,6 +37,15 @@ def open_message(request, contact_id):
     return render(request, template, context)
 
 
+def mark_unread(request, contact_id):
+    
+    inbox = Contacts.objects.get(id=contact_id)
+    inbox.read = False
+    inbox.save()
+
+    return redirect(reverse('contacts'))
+
+
 
 def compose_message(request):
     """

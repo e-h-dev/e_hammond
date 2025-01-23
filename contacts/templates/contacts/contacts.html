@@ -38,13 +38,15 @@
                             {% else %}
                             <p class="inbox-subject new-message">no subject</p>
                             {% endif %}
-                            
                         </div>
                         <div class="col-3">
                             <p class="inbox-date-time new-message">{{ i.date }} {{ i.time }}</p>
                         </div>
                     </div>
                 </a>
+                <p>
+                    <a href="{% url 'mark_unread' i.id %}" class="unread">Mark as unread</a>
+                </p>
             </div>
         </div>
         
