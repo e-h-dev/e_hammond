@@ -45,7 +45,9 @@
                     </div>
                 </a>
                 <p>
-                    <a href="{% url 'mark_unread' i.id %}" class="unread">Mark as unread</a>
+                    <a href="{% url 'mark_unread' i.id %}" class="unread" title="Mark as unread">
+                        <i class="fa-solid fa-envelope-circle-check"></i>
+                    </a>
                 </p>
             </div>
         </div>
