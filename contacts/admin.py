@@ -5,14 +5,15 @@ from .models import Contacts
 class ContactAdmin(admin.ModelAdmin):
     readonly_fields = (
         'id',
-        'name',
-        'email',
-        'phone',
-        'subject',
-        'message',
+        # 'name',
+        # 'email',
+        # 'phone',
+        # 'send_to',
+        # 'subject',
+        # 'message',
         'date',
         'time',
-        'read',
+        #'read',
     )
 
     fields = (
@@ -20,6 +21,7 @@ class ContactAdmin(admin.ModelAdmin):
         'name',
         'email',
         'phone',
+        'send_to',
         'subject',
         'message',
         'date',
@@ -31,6 +33,7 @@ class ContactAdmin(admin.ModelAdmin):
         'id',
         'name',
         'email',
+        'send_to',
         'subject',
         'date',
         'time',

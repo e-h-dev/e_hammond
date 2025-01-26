@@ -9,6 +9,7 @@ class Contacts(models.Model):
         verbose_name_plural = "Contacts"
 
     name = models.CharField(max_length=26)
+    send_to = models.CharField(max_length=240)
     subject = models.CharField(max_length=52, null=True, blank=True)
     email = models.EmailField()
     phone = models.IntegerField()
