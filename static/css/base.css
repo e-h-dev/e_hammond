@@ -585,6 +585,10 @@ input[type="radio"]{
   color:#000
 }
 
+.delete-message{
+  cursor: pointer;
+}
+
 /* .unread[title]:hover::after{
   content: attr(title);
   position: absolute;
