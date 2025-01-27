@@ -1,17 +1,19 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
+from django.contrib.auth.models import User
 from .models import Contacts
 from .forms import ContactForm
 from .admin import ContactAdmin
 
 # Create your views here.
 
-def contacts(request):
 
+
+def contacts(request):
 
     inbox = Contacts.objects.all().order_by('-date', '-time')
 
     context = {
-        'inbox': inbox
+        'inbox': inbox,
     }
 
     return render(request, 'contacts/contacts.html', context)
@@ -26,15 +28,14 @@ def open_message(request, contact_id):
     inbox.read = True
     inbox.save()
 
-
     template = 'contacts/open_message.html'
-
 
     context = {
         'inbox': inbox
     }
 
     return render(request, template, context)
+
 
 
 def mark_unread(request, contact_id):
@@ -59,8 +60,6 @@ def compose_message(request):
         else:
             print(form.errors.as_data())
 
-
-
     else:
         form = ContactForm()
 
@@ -78,6 +77,5 @@ def delete_message(request, contact_id):
 
     inbox = Contacts.objects.get(id=contact_id)
     inbox.delete()
-
 
     return redirect(reverse('contacts'))
