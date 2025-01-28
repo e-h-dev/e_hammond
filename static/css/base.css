@@ -187,6 +187,14 @@ li a:hover{
   color:#000;
 }
 
+#no-user-message{
+  cursor: pointer;
+}
+
+#no-user-message:hover{
+  color:#000
+}
+
 .icon{
   position: inherit;
   text-align: center;

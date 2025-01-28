@@ -69,19 +69,19 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                {% if message %}
-                                    <div class="if-message">
-                                        <div class="inbox-number"><strong>5</strong></div>
-                                        <div class="icon if-message"><i class="fa-regular fa-envelope-open"></i></div>
-                                        Inbox
-                                    </div>
-                                {% else %}
+                                {% if request.user.is_authenticated %}
                                     <div class="message-box">
                                         <a href="{% url 'contacts' %}">
                                             <div class="icon"><i class="fa-regular fa-envelope-open"></i></div>
                                             Inbox ({{ unread_messages }})
                                         </a>
-                                        
+                                    </div>
+                                {% else %}
+                                    <div class="message-box">
+                                        <div id="no-user-message" onclick="noUser()">
+                                            <div class="icon"><i class="fa-regular fa-envelope-open"></i></div>
+                                            Send a message
+                                        </div>
                                     </div>
                                 {% endif %}
                             </div>
@@ -120,6 +120,13 @@
     {% endblock %}
 
     {% block postloadjs %}
+    <script>
+        function noUser(){
+            alert (
+                'Sorry you must be loged in to send a message'
+            );
+        }
+    </script>
     {% endblock %}
 </body>
 </html>
