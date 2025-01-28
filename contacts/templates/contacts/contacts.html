@@ -18,7 +18,7 @@
         Total Messages: <strong>{{ message_count }}</strong>
     </div>
     <div class="inbox-header">
-        <a href="{% url 'compose_message' %}">Compose message</a>
+        <a href="{% url 'compose_message' %}" class="compose shadow">Compose message <i class="fa-solid fa-pen-fancy"></i></a>
     </div>
     {% for i in inbox %}
     <div class="row">

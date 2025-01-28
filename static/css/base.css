@@ -476,6 +476,20 @@ input[type="radio"]{
   padding:10px;
 }
 
+.compose{
+  color:var(--text-color);
+  margin:10px;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  top:50px;
+}
+
+.compose:hover{
+  color:#f9f9f9;
+  background-color: var(--text-color);
+}
+
 .message-container{
   color: var(--text-color);
   font-family: var(--main-font);
@@ -595,6 +609,25 @@ input[type="radio"]{
 
 .delete-message{
   cursor: pointer;
+}
+
+.delete-ok, .delete-cancel{
+  cursor:pointer;
+  border-radius: 5px;
+  position: relative;
+  left:5px;
+  height:10px;
+  width:15px;
+  color:var(--text-color);
+  margin:5px;
+  padding:10px;
+  font-family: var(--main-font);
+}
+
+.delete-ok:hover, .delete-cancel:hover{
+  background-color: var(--text-color);
+  color:#f9f9f9;
+  font-family: var(--main-font);
 }
 
 /* .unread[title]:hover::after{
