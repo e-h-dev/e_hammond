@@ -1,18 +1,60 @@
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
+
+
 
 from .models import Contacts
 
 
-# @login_required
+def contacts_inbox(request):
+
+    # user = User.objects.all()
+
+    # current_user = user.filter(username='johndoe')
+
+    # print(current_user)
+
+    #user = get_object_or_404(User, username=request.user)
+
+    user = request.user.id
+    if user:
+        user_inbox = get_object_or_404(User, username=request.user)
+        inbox = Contacts.objects.filter(send_to=user_inbox)
+
+        unread_messages = inbox.filter(read=False).count()
+
+        print(unread_messages)
+
+        
+        message_count = len(inbox)
+
+        print(int(message_count))
+        
+        context = {
+            'inbox': inbox,
+            'message_count': message_count,
+            'unread_messages': unread_messages
+        }
+    else:
+        inbox = Contacts.objects.all()
+
+        context = {
+            'inbox': inbox
+        }
+
+    return context
+
+#@login_required
 # def contacts_inbox(request):
 
-#     user = get_object_or_404(User, username=request.user)
+#     user = User.objects.all().filter(username='elihammond')
 
-#     inbox = Contacts.objects.filter(send_to=user)
+#     print(user)
 
-#     unread_messages = inbox.filter(read=False).count()
+
+#     inbox = Contacts.objects.all()
+
+#     unread_messages = Contacts.objects.filter(read=False).count()
 
 #     print(unread_messages)
 
@@ -24,30 +66,8 @@ from .models import Contacts
 #     context = {
 #         'inbox': inbox,
 #         'message_count': message_count,
-#         'unread_messages': unread_messages
+#         'unread_messages': unread_messages,
 #     }
 
 #     return context
-
-#@login_required
-def contacts_inbox(request):
-
-    inbox = Contacts.objects.all()
-
-    unread_messages = Contacts.objects.filter(read=False).count()
-
-    print(unread_messages)
-
-    
-    message_count = len(inbox)
-
-    # print(int(message_count))
-    
-    context = {
-        'inbox': inbox,
-        'message_count': message_count,
-        'unread_messages': unread_messages
-    }
-
-    return context
 

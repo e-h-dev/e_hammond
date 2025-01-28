@@ -1,5 +1,6 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from .models import Contacts
 from .forms import ContactForm
 from .admin import ContactAdmin
@@ -7,7 +8,7 @@ from .admin import ContactAdmin
 # Create your views here.
 
 
-
+@login_required
 def contacts(request):
 
     inbox = Contacts.objects.all().order_by('-date', '-time')
@@ -20,7 +21,7 @@ def contacts(request):
 
 
 
-
+@login_required
 def open_message(request, contact_id):
     """ A view open and display contact message """
 
