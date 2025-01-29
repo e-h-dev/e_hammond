@@ -1,33 +1,28 @@
 {% extends "base.html" %}
 {% load static %}
-{% block extra_title %}- Inbox - ({{ unread_messages }}){% endblock %}
+{% block extra_title %}- Sent Messages{% endblock %}
 
 {% block content %}
 <div class="container-fluid">
     <div class="row">
         <div class="col-4"></div>
         <div class="col-4">
-            <h2 class="header">Inbox</h2>
+            <h2 class="header">Sent Messages</h2>
         </div>
         <div class="col-4"></div>
     </div>
-    <div class="inbox-header">
-        Inbox ({{ unread_messages }})
-    </div>
-    <div class="inbox-subheader">
-        Total Messages: <strong>{{ message_count }}</strong>
-    </div>
+    
     <div class="inbox-header">
         <a href="{% url 'compose_message' %}" class="compose shadow">Compose message <i class="fa-solid fa-pen-fancy"></i></a>
     </div>
     <div class="inbox-header">
-        <a href="{% url 'sent_messages' %}" class="sent-messages shadow">Sent messages </a>
+        <a href="{% url 'contacts' %}" class="sent-messages shadow">Back to inbox </a>
     </div>
     {% for i in inbox %}
     <div class="row">
         <div class="col-3">
         </div>
-        {% if i.send_to == user.username %}
+        {% if i.name == user.username %}
         <div class="col-8">
             <div {% if i.read %}class="opened-message"{% endif %}>
                 <a href="{% url 'open_message' i.id %}">

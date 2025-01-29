@@ -20,6 +20,18 @@ def contacts(request):
     return render(request, 'contacts/contacts.html', context)
 
 
+@login_required
+def sent_messages(request):
+
+    inbox = Contacts.objects.all().order_by('-date', '-time')
+
+    context = {
+        'inbox': inbox,
+    }
+
+    return render(request, 'contacts/sent_messages.html', context)
+
+
 
 @login_required
 def open_message(request, contact_id):
