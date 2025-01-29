@@ -85,6 +85,34 @@ def compose_message(request):
 
 
 
+
+def reply_message(request, contact_id):
+    """
+    A view to reply to a message
+    """
+    inbox = Contacts.objects.get(id=contact_id)
+
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('contacts'))
+        else:
+            print(form.errors.as_data())
+
+    else:
+        form = ContactForm()
+
+    template = 'contacts/reply_message.html'
+    context = {
+        'form': form,
+        'inbox': inbox,
+    }
+
+    return render(request, template, context)
+
+
+
 def delete_message(request, contact_id):
     """ A view to delete contacts """
 
