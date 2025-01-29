@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contacts
+from .models import Contacts, Replied
 
 
 class ContactAdmin(admin.ModelAdmin):
@@ -45,3 +45,4 @@ class ContactAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Contacts, ContactAdmin)
+admin.site.register(Replied)

@@ -1,8 +1,8 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .models import Contacts
-from .forms import ContactForm
+from .models import Contacts, Replied
+from .forms import ContactForm, ReplyForm
 from .admin import ContactAdmin
 
 # Create your views here.
@@ -86,6 +86,32 @@ def compose_message(request):
 
 
 
+# def reply_message(request, contact_id):
+#     """
+#     A view to reply to a message
+#     """
+#     inbox = Contacts.objects.get(id=contact_id)
+
+#     if request.method == 'POST':
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect(reverse('contacts'))
+#         else:
+#             print(form.errors.as_data())
+
+#     else:
+#         form = ContactForm()
+
+#     template = 'contacts/reply_message.html'
+#     context = {
+#         'form': form,
+#         'inbox': inbox,
+#     }
+
+#     return render(request, template, context)
+
+
 def reply_message(request, contact_id):
     """
     A view to reply to a message
@@ -93,7 +119,7 @@ def reply_message(request, contact_id):
     inbox = Contacts.objects.get(id=contact_id)
 
     if request.method == 'POST':
-        form = ContactForm(request.POST)
+        form = ReplyForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect(reverse('contacts'))
@@ -101,7 +127,7 @@ def reply_message(request, contact_id):
             print(form.errors.as_data())
 
     else:
-        form = ContactForm()
+        form = ReplyForm()
 
     template = 'contacts/reply_message.html'
     context = {

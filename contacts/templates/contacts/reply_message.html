@@ -17,11 +17,12 @@
                 <form action="{% url 'reply_message' inbox.id %}" method="POST" class="contact-form shadow mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="main-compose-message-section">
+                        <input type="text" id="id_thread" name="thread" value="{{ inbox.id }}">
                         <input type="text" id="id_name" name="name" value="{{ user.username }}" class="user-input-remove">
                     
                         <input type="email" id="id_email" value="{{ user.email }}" name="email" class="user-input-remove">
                     
-                        <input type="text" id="id_phone" name="phone" value="{{ user.phone }}" class="user-input-remove">
+                        <input type="text" id="id_phone" name="phone" class="input" placeholder="Phone Number">
 
                         <div>
                             <p>Reply to</p>

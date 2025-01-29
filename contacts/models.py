@@ -19,4 +19,18 @@ class Contacts(models.Model):
     read = models.BooleanField(default=False)
 
 
+
+class Replied(models.Model):
+
+    thread = models.ForeignKey(Contacts, on_delete=models.CASCADE)
+    send_to = models.CharField(max_length=240)
+    subject = models.CharField(max_length=52, null=True, blank=True)
+    message = models.TextField()
+    date = models.DateField(auto_now_add=True)
+    time = models.TimeField(auto_now_add=True)
+    read = models.BooleanField(default=False)
+
+
+
+
     
