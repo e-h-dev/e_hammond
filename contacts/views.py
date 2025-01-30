@@ -41,10 +41,13 @@ def open_message(request, contact_id):
     inbox.read = True
     inbox.save()
 
+    replied = Replied.objects.filter(thread=contact_id)
+
     template = 'contacts/open_message.html'
 
     context = {
-        'inbox': inbox
+        'inbox': inbox,
+        'replied': replied
     }
 
     return render(request, template, context)
@@ -86,32 +89,6 @@ def compose_message(request):
 
 
 
-# def reply_message(request, contact_id):
-#     """
-#     A view to reply to a message
-#     """
-#     inbox = Contacts.objects.get(id=contact_id)
-
-#     if request.method == 'POST':
-#         form = ContactForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect(reverse('contacts'))
-#         else:
-#             print(form.errors.as_data())
-
-#     else:
-#         form = ContactForm()
-
-#     template = 'contacts/reply_message.html'
-#     context = {
-#         'form': form,
-#         'inbox': inbox,
-#     }
-
-#     return render(request, template, context)
-
-
 def reply_message(request, contact_id):
     """
     A view to reply to a message
@@ -136,6 +113,7 @@ def reply_message(request, contact_id):
     }
 
     return render(request, template, context)
+
 
 
 

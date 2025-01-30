@@ -46,6 +46,12 @@
                             {{ inbox.date }} {{ inbox.time }}
                         </p>
                     </div>
+                    <div class="thread-load">
+                        {% for r in replied %}
+                        <p>{{ r.send_to }}</p>
+                        <p>{{ r.message }}</p>
+                        {% endfor %}
+                    </div>
                     <div class="delete-message">
                         <div id="delete" title="Delete message"><i class="fa-solid fa-trash-can"></i></div>
                     </div>
