@@ -27,6 +27,7 @@ def contacts_inbox(request):
             'inbox': inbox,
             'message_count': message_count,
             'unread_messages': unread_messages,
+            'replied': replied,
             'replied_count': replied_count
         }
     else:

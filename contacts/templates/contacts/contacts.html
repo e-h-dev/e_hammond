@@ -28,6 +28,7 @@
         <div class="col-3">
         </div>
         {% if i.send_to == user.username %}
+        
         <div class="col-8">
             <div {% if i.read %}class="opened-message"{% endif %}>
                 <a href="{% url 'open_message' i.id %}">
