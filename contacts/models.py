@@ -23,6 +23,7 @@ class Contacts(models.Model):
 class Replied(models.Model):
 
     thread = models.ForeignKey(Contacts, on_delete=models.CASCADE)
+    name = models.CharField(max_length=26, null=True, blank=True)
     send_to = models.CharField(max_length=240)
     subject = models.CharField(max_length=52, null=True, blank=True)
     message = models.TextField()

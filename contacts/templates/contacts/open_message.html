@@ -48,9 +48,8 @@
                     </div>
                     {% if replied %}
                     <div class="thread-load">
-                        Replied
                         {% for r in replied %}
-                        <p>{{ user.username }}</p>
+                        <p>Reply from {{ r.name }}</p>
                         <hr>
                         <p>{{ r.message }}</p>
                         <p>
