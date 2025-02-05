@@ -663,6 +663,11 @@ input[type="radio"]{
   width:100%;
 }
 
+.replied{
+  position: relative;
+  z-index: 2;
+}
+
 /* .unread[title]:hover::after{
   content: attr(title);
   position: absolute;

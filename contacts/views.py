@@ -94,6 +94,7 @@ def reply_message(request, contact_id):
     A view to reply to a message
     """
     inbox = Contacts.objects.get(id=contact_id)
+    reply = Replied.objects.all()
 
     if request.method == 'POST':
         form = ReplyForm(request.POST)
@@ -110,6 +111,7 @@ def reply_message(request, contact_id):
     context = {
         'form': form,
         'inbox': inbox,
+        'reply': reply,
     }
 
     return render(request, template, context)

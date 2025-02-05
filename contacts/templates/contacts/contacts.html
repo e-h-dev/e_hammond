@@ -17,6 +17,14 @@
     <div class="inbox-subheader">
         Total Messages: <strong>{{ message_count }}</strong>
     </div>
+    {% for r in replied %}
+    <div class="row replied">
+        <div class="col-3">
+            You have {{ r.subject }}
+        </div>
+        <div class="col-9"></div>
+    </div>
+    {% endfor %}
     <div class="inbox-header">
         <a href="{% url 'compose_message' %}" class="compose shadow">Compose message <i class="fa-solid fa-pen-fancy"></i></a>
     </div>
