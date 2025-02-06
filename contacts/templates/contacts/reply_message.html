@@ -14,7 +14,10 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <!-- form to reply to message -->
+                 {{ reply }}
                 {% for rep in reply %}
+                <p>{{ rep.name }}</p>
+                {% endfor %}
                 <form action="{% url 'reply_message' inbox.id %}" method="POST" class="contact-form shadow mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="main-compose-message-section">
@@ -46,7 +49,6 @@
                         <button class="shadow button add-edit-btn" type="submit">Send message</button>
                     </div>
                 </form>
-                {% endfor %}
             </div>
         </div>
     </div>

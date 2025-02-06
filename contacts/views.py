@@ -13,8 +13,11 @@ def contacts(request):
 
     inbox = Contacts.objects.all().order_by('-date', '-time')
 
+    replied = Replied.objects.all()
+
     context = {
         'inbox': inbox,
+        'replied': replied
     }
 
     return render(request, 'contacts/contacts.html', context)
