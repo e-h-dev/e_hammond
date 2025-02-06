@@ -23,7 +23,7 @@ def contacts_inbox(request):
         message_count = len(inbox)
 
         print(int(message_count))
-        
+
         context = {
             'inbox': inbox,
             'message_count': message_count,
