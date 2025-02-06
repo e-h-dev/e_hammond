@@ -17,14 +17,6 @@
     <div class="inbox-subheader">
         Total Messages: <strong>{{ message_count }}</strong>
     </div>
-    {% for r in replied %}
-    <div class="row replied">
-        <div class="col-3">
-            You have {{ r.message }}
-        </div>
-        <div class="col-9"></div>
-    </div>
-    {% endfor %}
     <div class="inbox-header">
         <a href="{% url 'compose_message' %}" class="compose shadow">Compose message <i class="fa-solid fa-pen-fancy"></i></a>
     </div>
@@ -42,7 +34,7 @@
                 <a href="{% url 'open_message' i.id %}">
                     <div class="row message-container shadow">
                         <div class="col-3">
-                            <p class="inbox-name">{{ i.name }}{% if i.has_reply == True %} {{ replied.count }}
+                            <p class="inbox-name">{{ i.name }}{% if i.has_reply == True %} {{ inbox_replied_count }}
                             {% endif %}</p>
                             <div>
                                 
