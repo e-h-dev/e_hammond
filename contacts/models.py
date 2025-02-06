@@ -17,6 +17,7 @@ class Contacts(models.Model):
     date = models.DateField(auto_now_add=True)
     time = models.TimeField(auto_now_add=True)
     read = models.BooleanField(default=False)
+    has_reply = models.BooleanField(default=False)
 
 
 

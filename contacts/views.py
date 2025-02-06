@@ -103,6 +103,8 @@ def reply_message(request, contact_id):
         form = ReplyForm(request.POST)
         if form.is_valid():
             form.save()
+            inbox.has_reply = True
+            inbox.save()
             return redirect(reverse('contacts'))
         else:
             print(form.errors.as_data())

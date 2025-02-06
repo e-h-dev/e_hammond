@@ -27,6 +27,7 @@ class ContactAdmin(admin.ModelAdmin):
         'date',
         'time',
         'read',
+        'has_reply',
     )
 
     list_display = (

@@ -42,7 +42,14 @@
                 <a href="{% url 'open_message' i.id %}">
                     <div class="row message-container shadow">
                         <div class="col-3">
-                            <p class="inbox-name new-message">{{ i.name }}</p>
+                            <p class="inbox-name">{{ i.name }}{% if i.has_reply == True %} {{ replied.count }}
+                            {% endif %}</p>
+                            <div>
+                                
+                                {% for r in replied %}
+                                {% endfor %}
+                                
+                            </div>
                         </div>
                         <div class="col-6">
                             {% if i.subject %}
