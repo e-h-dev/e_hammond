@@ -14,6 +14,7 @@ def contacts(request):
     inbox = Contacts.objects.all().order_by('-date', '-time')
 
     replied = Replied.objects.all()
+    #replied = Replied.objects.filter(thread=contact_id)
 
     context = {
         'inbox': inbox,
