@@ -89,10 +89,9 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="pic-text-box shadow">
-                            <h2><strong>Eli Hammond</strong> Fullstack Web Developer</h2>
-                        </div>
+                        {% include 'includes/mobile_nav.html' %}
                     </div>
+                    
                 </div>
                 <div class="row bottom-header">
                     <div class="col-md-6"></div>
@@ -126,7 +125,20 @@
             alert (
                 'Sorry you must be loged in to send a message'
             );
-        }
+        };
+
+        $('.mobile-nav-toggle').click(function(){
+            $('.mobile-nav-container').css('display', 'block')
+            $('.mobile-nav-toggle').css('display', 'none')
+            $('.mobile-nav-toggle-close').css('display', 'block')
+        });
+
+        $('.mobile-nav-toggle-close').click(function(){
+            $('.mobile-nav-container').css('display', 'none')
+            $('.mobile-nav-toggle').css('display', 'block')
+            $('.mobile-nav-toggle-close').css('display', 'none')
+        });
+
     </script>
     {% endblock %}
 </body>
