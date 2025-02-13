@@ -4,9 +4,9 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-lg-2 col-md-1">
         </div>
-        <div class="col-md-8">
+        <div class="col-lg-8 col-md-11">
             <div class="small-box"></div>
             <div class="info-box shadow">
                 <h3>Welcome!</h3>
@@ -16,9 +16,17 @@
                 <p>I work from the design stage, all the way to the backend, building websites fit for all purposes. My skills include, creating custom frontend designs and buiding complex database structures. Using the latest technology, I can build websites suitable for the modern competitve buisness market.</p>
             </div>
         </div>
-        <div class="col-md-2">
-            <div class="btn porfolio-btn shadow"><a href="{% url 'portfolio' %}">Check out my Portfilio</a></div>
+        <div class="col-lg-2 d-none d-lg-block">
+            <div class="btn portfolio-btn portfolio-btn-lg shadow"><a href="{% url 'portfolio' %}">Check out my Portfolio</a></div>
         </div>
+    </div>
+    <!-- row for portfolio link button on mobile -->
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 mb-5 d-lg-none">
+            <div class="btn portfolio-btn portfolio-btn-md shadow"><a href="{% url 'portfolio' %}">Check out my Portfolio</a></div>
+        </div>
+        <div class="col-4"></div>
     </div>
     <div class="row">
         <div class="col-6 review-section">
@@ -28,7 +36,7 @@
     </div>
     <div class="row">
             {% for review in reviews %}
-            <div class="col-4 review-section">
+            <div class="col-lg-4 col-md-6 review-section">
                 <div class="user-review shadow">
                     <div>
                         Review by: {{ review.name }}

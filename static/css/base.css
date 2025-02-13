@@ -274,11 +274,8 @@ li a:hover{
   font-weight: 500;
 }
 
-.porfolio-btn{
+.portfolio-btn{
   position: relative;
-  top:100px;
-  /* left:200px; */
-  right:100px;
   z-index: 1;
   font-family: var(--main-font);
   text-align: center;
@@ -288,13 +285,22 @@ li a:hover{
   border-radius: 10px;
 }
 
-.porfolio-btn a{
+.portfolio-btn-lg{
+  top:100px;
+  right:100px;
+}
+
+.portfolio-btn-md{
+  top:20px;
+}
+
+.portfolio-btn a{
   color: rgb(80, 77, 100);
   text-decoration: none;
 }
 
-.porfolio-btn:hover{
-  background-color: rgba(212, 212, 212, 0.5);
+.portfolio-btn:hover{
+  background-color: #f9f9f9;
 }
 
 .review-section{
