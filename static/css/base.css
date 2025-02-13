@@ -55,6 +55,7 @@ a:hover{
 
 .hello{
   width:max-content;
+  padding-left: 10px;
 }
 
 .bottom-header{
@@ -87,7 +88,7 @@ a:hover{
   width:max-content;
   padding:20px;
   top:50px;
-  left:100%;
+  left:20%;
   display:none;
 }
 
