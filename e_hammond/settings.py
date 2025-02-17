@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'home',
     'portfolio',
     'contacts',
+    'sign_in',
 ]
 
 MIDDLEWARE = [
