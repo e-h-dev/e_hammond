@@ -12,7 +12,7 @@ cffi==1.17.1
 charset-normalizer==3.4.1
 cryptography==44.0.0
 defusedxml==0.7.1
-django-allauth==0.55.0
+django-allauth==0.50.0
 idna==3.10
 pycparser==2.22
 requests==2.32.3
