@@ -57,12 +57,12 @@
                                         {% endif %}
                                         {% if request.user.is_authenticated %}
                                         <div class="dropdown-content">
-                                            <a href="{% url 'account_logout' %}">Logout</a>
+                                            <a href="{% url 'sign_out' %}">Logout</a>
                                         </div>
                                         {% else %}
                                             <div class="dropdown-content">
                                                 <a href="{% url 'sign_in' %}">Login</a>
-                                                <a href="{% url 'account_signup' %}">Register</a>
+                                                <a href="{% url 'sign_up' %}">Register</a>
                                             </div>
                                         {% endif %}
                                     </div>

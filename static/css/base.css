@@ -736,3 +736,11 @@ input[type="radio"]{
   background-color: red;
   font-size: 2rem;
 } */
+
+
+/* -------------------------sign in pages */
+
+.sign_in{
+  position: relative;
+  z-index: 2;
+}
