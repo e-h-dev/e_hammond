@@ -571,13 +571,13 @@ input[type="radio"]{
   /* margin: 20px; */
 }
 
-.new-message{
-  font-weight: bolder;
-  color:green;
+.unread-message{
+  font-weight:800;
 }
 
 .opened-message{
   font-weight: 200;
+  background-color: #f9f9f9;
 }
 
 .inbox-name{
@@ -653,6 +653,7 @@ input[type="radio"]{
 .message-display{
   width:100%;
   text-align: justify;
+  /* margin-bottom:40px; */
 }
 
 .main-message-date-time{
@@ -665,13 +666,17 @@ input[type="radio"]{
   font-weight: 500;
 }
 
+/* .unread-icon{
+  color:rgba(80, 77, 100, 0.5)
+} */
+
 .unread{
   position: relative;
   bottom:40px;
   left:200px;
   z-index: 2;
-  color: var(--text-color);
-  font-size: 1.2rem;
+  color:rgba(80, 77, 100, 0.5);
+  font-size: 1.1rem;
 }
 
 .unread:hover{
