@@ -766,6 +766,12 @@ input[type="radio"]{
   border-radius: 10px;
 }
 
+.sign-in-form-box ul{
+  font-size: small;
+  position: relative;
+  top:-20px;
+}
+
 p input{
   background-color: rgba(80, 77, 100, 0.1);
   outline: none;
@@ -784,22 +790,30 @@ p input:active{
   background-color:rgba(80, 77, 100, 0.1);
 }
 
-
-.sign-in-form-box a,
 .sign-in-form-box button{
   background-color: var(--text-color);
   color:#f9f9f9;
+  display:block;
   height:40px;
   width:100px;
   outline: none;
   border: none;
   border-radius: 5px;
+  margin-top: 10px;;
 }
 
-.sign-in-form-box a:hover,
+.forgot-password-btn{
+  color:var(--text-color);
+  font-weight: bolder;
+}
+
 .sign-in-form-box button:hover{
   background-color:#f9f9f9;
   color: var(--text-color);
+}
+
+.forgot-password-btn:hover{
+  color:#000;
 }
 
 .sign-link{
@@ -809,4 +823,24 @@ p input:active{
 
 .sign-link:hover{
   color:#000;
+}
+
+.sign-out-cancel-button{
+  background-color:rgba(95, 33, 33, 0.5);
+  color:#f9f9f9;
+  font-family: var(--main-font);
+  display: block;
+  text-align: center;
+  height:40px;
+  width:100px;
+  padding:10px;
+  border-radius: 5px;
+  position: relative;
+  left:300px;
+  bottom:70px;
+}
+
+.sign-out-cancel-button:hover{
+  color:var(--text-color);
+  background-color: #f9f9f9;
 }

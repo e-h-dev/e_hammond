@@ -13,13 +13,13 @@
                 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
                 {% csrf_token %}
                 <p>
-                    <label for="id_email">E-mail:</label>
+                    <label for="id_email">email:</label>
                     <input type="email" name="email" value="elianddevorah@gmail.com" placeholder="E-mail address" autocomplete="email" maxlength="320" required="" id="id_email">
                 </p>
-                
+                <ul class="errorlist"><li>This field is required.</li></ul>
                   
                 <p>
-                    <label for="id_email2">E-mail (again):</label>
+                    <label for="id_email2">email (again):</label>
                     <input type="email" name="email2" value="elianddevorah@gmail.com" placeholder="E-mail address confirmation" maxlength="320" required="" id="id_email2">
                 </p>
                 
@@ -39,7 +39,8 @@
                 <p>
                     <label for="id_password2">Password (again):</label>
                     <input type="password" name="password2" placeholder="Password (again)" autocomplete="new-password" required="" aria-invalid="true" id="id_password2">
-                  </p>
+                </p>
+                <ul class="errorlist"><li>This field is required.</li></ul>
                 <button type="submit">Sign Up &raquo;</button>
                 </form>
               </div>
