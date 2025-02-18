@@ -2,22 +2,30 @@
 
 {% block content %}
 <div class="sign_in">
-    <h1>Sign In</h1>
-
-    <form class="login" method="POST" action="{% url 'account_login' %}">
-        {% csrf_token %}
-        <p>
-            <label for="id_login">Login:</label>
-            <input type="text" name="login" placeholder="Username or e-mail" autocomplete="email" required="" aria-invalid="true" id="id_login"> 
-        </p>
-        
-        <ul class="errorlist"><li>This field is required.</li></ul>
-        <p>
-            <label for="id_password">Password:</label>
-            <input type="password" name="password" placeholder="Password" autocomplete="current-password" required="" aria-invalid="true" id="id_password">
-        </p>
-        <a class="button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password?</a>
-        <button class="primaryAction" type="submit">Sign In</button>
-    </form>
+    <div class="row sign-in-row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <h1 class="sign-in-header">Sign In</h1>
+            <p class="sign-in-header">Do not have an account? Then please <a class="sign-link" href="{% url 'sign_up' %}">sign up</a></p>
+            <div class="sign-in-form-box shadow">
+                <form class="login" method="POST" action="{% url 'account_login' %}">
+                    {% csrf_token %}
+                    <p>
+                        <label for="id_login">Username or e-mail:</label>
+                        <input type="text" name="login" placeholder="Username or e-mail" autocomplete="email" required="" aria-invalid="true" id="id_login"> 
+                    </p>
+                    
+                    <ul class="errorlist"><li>This field is required.</li></ul>
+                    <p>
+                        <label for="id_password">Password:</label>
+                        <input type="password" name="password" placeholder="Password" autocomplete="current-password" required="" aria-invalid="true" id="id_password">
+                    </p>
+                    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password?</a>
+                    <button class="primaryAction" type="submit">Sign In</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
 </div>
 {% endblock %}
