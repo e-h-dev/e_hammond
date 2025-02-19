@@ -31,37 +31,37 @@
         
         <div class="col-8">
             <div class="message-display">
-                <a href="{% url 'open_message' i.id %}">
+                <!-- <a href="{% url 'open_message' i.id %}"> -->
                     <div class="row message-container {% if i.read %}opened-message{% else %}unread-message{% endif %} shadow">
                         <div class="col-3">
-                            <p class="inbox-name">{{ i.name }}{% if i.has_reply == True %} {{ inbox_replied_count }}
-                            {% endif %}</p>
-                            <div>
-                                
-                                {% for r in replied %}
-                                {% endfor %}
-                                
+                            <a href="{% url 'open_message' i.id %}">
+                                <p class="inbox-name">{{ i.name }}{% if i.has_reply == True %} {{ inbox_replied_count }}
+                                {% endif %}</p>
+                            </a>
+                            {% if i.read %}
+                            <div class="unread">
+                                <a href="{% url 'mark_unread' i.id %}" class="unread-icon" title="Mark as unread">
+                                    <i class="fa-solid fa-envelope-circle-check"></i>
+                                </a>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            {% if i.subject %}
-                            <p class="inbox-subject">{{ i.subject }}</p>
-                            {% else %}
-                            <p class="inbox-subject">no subject</p>
                             {% endif %}
                         </div>
+                        <div class="col-6">
+                            <a href="{% url 'open_message' i.id %}">
+                                {% if i.subject %}
+                                <p class="inbox-subject">{{ i.subject }}</p>
+                                {% else %}
+                                <p class="inbox-subject">no subject</p>
+                                {% endif %}
+                            </a>
+                        </div>
                         <div class="col-3">
-                            <p class="inbox-date-time">{{ i.date }} {{ i.time }}</p>
+                            <a href="{% url 'open_message' i.id %}">
+                                <p class="inbox-date-time">{{ i.date }} {{ i.time }}</p>
+                            </a>
                         </div>
                     </div>
-                </a>
-                {% if i.read %}
-                <p class="unread-icon">
-                    <a href="{% url 'mark_unread' i.id %}" class="unread" title="Mark as unread">
-                        <i class="fa-solid fa-envelope-circle-check"></i>
-                    </a>
-                </p>
-                {% endif %}
+                <!-- </a> -->
             </div>
         </div>
         {% endif %}

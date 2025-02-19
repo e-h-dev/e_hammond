@@ -573,11 +573,18 @@ input[type="radio"]{
 
 .unread-message{
   font-weight:800;
+  margin-bottom: 10px;
 }
 
 .opened-message{
   font-weight: 200;
   background-color: #f9f9f9;
+  height:60px;
+  margin-bottom: 10px;
+}
+
+.opened-message a{
+  color:var(--text-color);
 }
 
 .inbox-name{
@@ -653,7 +660,26 @@ input[type="radio"]{
 .message-display{
   width:100%;
   text-align: justify;
+  cursor: pointer;
   /* margin-bottom:40px; */
+}
+
+.message-display a{
+  color: var(--text-color);
+}
+
+.unread a{
+  display:none;
+  color:rgba(80, 77, 100, 0.5);
+  width:fit-content;
+}
+
+.unread a:hover{
+  color:var(--text-color);
+}
+
+.message-display:hover .unread a{
+  display: block;
 }
 
 .main-message-date-time{
@@ -666,20 +692,17 @@ input[type="radio"]{
   font-weight: 500;
 }
 
-/* .unread-icon{
-  color:rgba(80, 77, 100, 0.5)
-} */
 
-.unread{
+.opened-message .unread{
+  color:rgba(80, 77, 100, 0.5);
+  font-size: 1.1rem;
   position: relative;
   bottom:40px;
   left:200px;
   z-index: 2;
-  color:rgba(80, 77, 100, 0.5);
-  font-size: 1.1rem;
 }
 
-.unread:hover{
+.opened-message .unread:hover{
   color:#000
 }
 
