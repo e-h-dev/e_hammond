@@ -18,11 +18,7 @@ def contacts_inbox(request):
 
         unread_messages = inbox.filter(read=False).count()
 
-        print(unread_messages)
-
         message_count = len(inbox)
-
-        print(int(message_count))
 
         context = {
             'inbox': inbox,

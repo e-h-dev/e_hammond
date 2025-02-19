@@ -20,8 +20,10 @@ class Contacts(models.Model):
     has_reply = models.BooleanField(default=False)
 
 
-
 class Replied(models.Model):
+
+    class Meta:
+        verbose_name_plural = "Replies"
 
     thread = models.ForeignKey(Contacts, on_delete=models.CASCADE)
     name = models.CharField(max_length=26, null=True, blank=True)
@@ -31,8 +33,3 @@ class Replied(models.Model):
     date = models.DateField(auto_now_add=True)
     time = models.TimeField(auto_now_add=True)
     read = models.BooleanField(default=False)
-
-
-
-
-    
