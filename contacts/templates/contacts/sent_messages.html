@@ -24,32 +24,31 @@
         </div>
         {% if i.name == user.username %}
         <div class="col-8">
-            <div {% if i.read %}class="opened-message"{% endif %}>
-                <a href="{% url 'open_message' i.id %}">
-                    <div class="row message-container shadow">
+            <div class="message-display">
+                <div class="row message-container opened-message shadow">
+                    <a href="{% url 'open_message' i.id %}">
                         <div class="col-3">
                             <p class="inbox-name new-message">{{ i.send_to }}
-                            {% if i.has_reply == True %} {{ inbox_replied_count }}
+                            {% if i.has_reply == True %}
                             {% endif %}
                             </p>
                         </div>
-                        <div class="col-6">
+                    </a>
+                    <div class="col-6">
+                        <a href="{% url 'open_message' i.id %}">
                             {% if i.subject %}
                             <p class="inbox-subject new-message">{{ i.subject }}</p>
                             {% else %}
                             <p class="inbox-subject new-message">no subject</p>
                             {% endif %}
-                        </div>
-                        <div class="col-3">
-                            <p class="inbox-date-time new-message">{{ i.date }} {{ i.time }}</p>
-                        </div>
+                        </a>
                     </div>
-                </a>
-                <p>
-                    <a href="{% url 'mark_unread' i.id %}" class="unread" title="Mark as unread">
-                        <i class="fa-solid fa-envelope-circle-check"></i>
-                    </a>
-                </p>
+                    <div class="col-3">
+                        <a href="{% url 'open_message' i.id %}">
+                            <p class="inbox-date-time new-message">{{ i.date }} {{ i.time }}</p>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         {% endif %}
