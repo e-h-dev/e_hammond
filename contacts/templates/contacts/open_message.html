@@ -36,35 +36,43 @@
                 </div>
                 <div class="row message-row">
                     <div class="col-8 message-display">
-                        <p>
-                            {{ inbox.message }}
-                        </p>
+                        <div class="thread-load">
+                            <p>
+                                {{ inbox.message }}
+                            </p>
+                            <p class="inbox-date-time main-message-date-time">
+                                Recieved:
+                                {{ inbox.date }} {{ inbox.time }}
+                            </p>
+                        </div>
                     </div>
                     <div class="col-4">
-                        <p class="inbox-date-time main-message-date-time">
-                            Recieved:
-                            {{ inbox.date }} {{ inbox.time }}
-                        </p>
                     </div>
                     {% if replied %}
-                    <div class="thread-load">
+                    
                         {% for r in replied %}
-                        <p>Reply from {{ r.name }}</p>
+                        <div class="{% if r.name == user.username %} thread-load {% else %} thread-load2 {% endif %}">
+                        {% if r.name == user.username%}
+                        <p>Reply from <strong>me</strong></p>
+                        {% else %}
+                        <p>Reply from <strong>{{ r.name }}</strong></p>
+                        {% endif %}
                         <hr>
                         <p>{{ r.message }}</p>
-                        <p>
-                            Recieved:
-                            {{ r.date }} {{ r.time }}
+                        <p class="inbox-date-time">
+                            <strong>Recieved: {{ r.date }} {{ r.time }}</strong>
                         </p>
+                        </div>
                         {% endfor %}
-                    </div>
+                    
                     {% endif %}
-                    <div class="delete-message">
-                        <div id="delete" title="Delete message"><i class="fa-solid fa-trash-can"></i></div>
+                </div>
+                <div class="reply-and-delete-box">
+                    <div>
+                        <div id="delete" title="Delete message" class="delete-message"><i class="fa-solid fa-trash-can"></i>
+                        <a href="{% url 'reply_message' inbox.id %}" class="reply-message shadow">Reply</a></div>
                     </div>
-                    <div class="reply-message">
-                        <a href="{% url 'reply_message' inbox.id %}">Reply</a>
-                    </div>
+                    
                 </div>
             </div> 
             

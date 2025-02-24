@@ -724,6 +724,11 @@ input[type="radio"]{
 
 .delete-message{
   cursor: pointer;
+  size:1.5rem;
+}
+
+.delete-message:hover{
+  color:#000;
 }
 
 .delete-ok, .delete-cancel{
@@ -745,12 +750,37 @@ input[type="radio"]{
   font-family: var(--main-font);
 }
 
+.reply-message{
+  color:#f9f9f9;
+  size: 1.1rem;
+  margin-left: 20px;
+  padding:10px;
+  border-radius: 5px;
+  background-color: var(--text-color);
+}
+
+.reply-message:hover{
+  background-color:#f9f9f9;
+  color: var(--text-color);
+}
+
+
 .thread-load{
   background-color: #f9f9f9;
   padding:30px;
   margin:20px;
   border-radius: 10px;
-  width:100%;
+  width:50%;
+}
+
+.thread-load2{
+  background-color: #a1d8a4;
+  position: relative;
+  left:45%;
+  padding:30px;
+  margin:20px;
+  border-radius: 10px;
+  width:50%;
 }
 
 .replied{
