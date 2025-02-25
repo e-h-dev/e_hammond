@@ -69,8 +69,12 @@
                 </div>
                 <div class="reply-and-delete-box">
                     <div>
-                        <div id="delete" title="Delete message" class="delete-message"><i class="fa-solid fa-trash-can"></i>
-                        <a href="{% url 'reply_message' inbox.id %}" class="reply-message shadow">Reply</a></div>
+                        {% if inbox.send_to == user.username %}
+                        <span id="delete" title="Delete message" class="delete-message"><i class="fa-solid fa-trash-can"></i></span>
+                        {% endif %}
+                        <a href="{% url 'reply_message' inbox.id %}" class="reply-message shadow">Reply</a>
+                        <a href="{% url 'contacts' %}" class="reply-message shadow">Back to inbox</a>
+
                     </div>
                     
                 </div>

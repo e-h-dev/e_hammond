@@ -45,7 +45,7 @@ def open_message(request, contact_id):
     inbox.read = True
     inbox.save()
 
-    if inbox.new_reply == True:
+    if inbox.new_reply is True:
         inbox.new_reply = False
         inbox.save()
 

@@ -13,10 +13,6 @@ def contacts_inbox(request):
         replied = Replied.objects.filter(name=user_inbox)
         reply_message = Contacts.objects.filter(new_reply=True)
 
-        replied_count = len(replied)
-
-        inbox_replied_count = replied_count + 1
-
         unread_messages = inbox.filter(read=False).count()
 
         message_count = len(inbox)
@@ -28,8 +24,6 @@ def contacts_inbox(request):
             'message_count': message_count,
             'unread_messages': unread_messages,
             'replied': replied,
-            'replied_count': replied_count,
-            'inbox_replied_count': inbox_replied_count,
             'reply_num': reply_num,
         }
     else:

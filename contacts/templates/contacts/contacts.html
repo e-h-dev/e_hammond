@@ -78,13 +78,7 @@
                             <p class="inbox-name">{{ i.name }}{% if i.new_reply == True %} <span class="new-reply ml-3 shadow">New</span>
                             {% endif %}</p>
                         </a>
-                        {% if i.read %}
-                        <div class="unread">
-                            <a href="{% url 'mark_unread' i.id %}" class="unread-icon" title="Mark as unread">
-                                <i class="fa-solid fa-envelope-circle-check"></i>
-                            </a>
-                        </div>
-                        {% endif %}
+                        
                     </div>
                     <div class="col-6">
                         <a href="{% url 'open_message' i.id %}">
