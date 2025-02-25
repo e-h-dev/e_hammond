@@ -18,6 +18,7 @@ class Contacts(models.Model):
     time = models.TimeField(auto_now_add=True)
     read = models.BooleanField(default=False)
     has_reply = models.BooleanField(default=False)
+    new_reply = models.BooleanField(default=False)
 
 
 class Replied(models.Model):

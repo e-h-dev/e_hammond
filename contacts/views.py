@@ -45,6 +45,10 @@ def open_message(request, contact_id):
     inbox.read = True
     inbox.save()
 
+    if inbox.new_reply == True:
+        inbox.new_reply = False
+        inbox.save()
+
     replied = Replied.objects.filter(thread=contact_id)
 
     template = 'contacts/open_message.html'
@@ -105,7 +109,9 @@ def reply_message(request, contact_id):
         if form.is_valid():
             form.save()
             inbox.has_reply = True
-            inbox.save()
+            #inbox.save()
+            inbox.new_reply = True
+            #inbox.save()
             inbox.read = False
             inbox.save()
             return redirect(reverse('contacts'))

@@ -788,6 +788,21 @@ input[type="radio"]{
   z-index: 2;
 }
 
+.new-reply{
+  background-color: rgb(80, 77, 100);
+  color:#f9f9f9;
+  padding:5px;
+  border-radius: 5px;
+  font-weight: 600;
+  animation: flash 2s linear infinite;
+}
+
+@keyframes flash {
+  50% {
+    background-color: rgba(80, 77, 100, 0.3);
+  }
+}
+
 /* .unread[title]:hover::after{
   content: attr(title);
   position: absolute;

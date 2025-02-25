@@ -74,7 +74,7 @@
                                         <a href="{% url 'contacts' %}">
                                             <div class="icon"><i class="fa-regular fa-envelope-open"></i></div>
                                             Inbox ({{ unread_messages }})
-                                            Replied messages ({{ replied_count }})
+                                            {% if reply_num >= 1 %} <p class="new-reply ml-3 shadow">New Replies ({{ reply_num }})</p>{% endif %}
                                         </a>
                                     </div>
                                 {% else %}

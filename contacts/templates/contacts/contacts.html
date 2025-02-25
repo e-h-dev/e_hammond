@@ -7,7 +7,8 @@
     <div class="row">
         <div class="col-4"></div>
         <div class="col-4">
-            <h2 class="header">Inbox</h2>
+            <h2 class="header">Inbox {% if i.new_reply == True %} <span class="new-reply ml-3 shadow">New Reply</span>
+                {% endif %}</h2>
         </div>
         <div class="col-4"></div>
     </div>
@@ -33,7 +34,9 @@
                 <div class="row message-container {% if i.read %}opened-message{% else %}unread-message{% endif %} shadow">
                     <div class="col-3">
                         <a href="{% url 'open_message' i.id %}">
-                            <p class="inbox-name">{{ i.name }}</p>
+                            <p class="inbox-name">{{ i.name }}{% if i.new_reply == True %} <span class="new-reply ml-3 shadow">New</span>
+                                {% endif %}
+                            </p>
                         </a>
                         {% if i.read %}
                         <div class="unread">
@@ -72,7 +75,7 @@
                 <div class="row message-container {% if i.read %}opened-message{% else %}unread-message{% endif %} shadow">
                     <div class="col-3">
                         <a href="{% url 'open_message' i.id %}">
-                            <p class="inbox-name">{{ i.name }}{% if i.has_reply == True %} {{ inbox_replied_count }}
+                            <p class="inbox-name">{{ i.name }}{% if i.new_reply == True %} <span class="new-reply ml-3 shadow">New</span>
                             {% endif %}</p>
                         </a>
                         {% if i.read %}
