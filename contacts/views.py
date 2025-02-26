@@ -1,6 +1,7 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 from .models import Contacts, Replied
 from .forms import ContactForm, ReplyForm
 from .admin import ContactAdmin
@@ -14,11 +15,18 @@ def contacts(request):
     inbox = Contacts.objects.all().order_by('-date', '-time')
 
     replied = Replied.objects.all()
-    #replied = Replied.objects.filter(thread=contact_id)
+    
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+
+            queries = Q(name__icontains=query) | Q(subject__icontains=query)
+
+            inbox = inbox.filter(queries)
 
     context = {
         'inbox': inbox,
-        'replied': replied
+        'replied': replied,
     }
 
     return render(request, 'contacts/contacts.html', context)

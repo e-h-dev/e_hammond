@@ -6,7 +6,17 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-4">
-            <div class="search-bar"></div>
+            <form action="{% url 'contacts' %}" method="GET">
+                <div class="search-bar-container">
+                    <input class="search-bar shadow ml-5" type="text" name="q" placeholder="Search inbox">
+                    <button class="search-refresh-btn" type="submit">
+                        <i class="fas fa-search"></i> 
+                    </button>
+                    <a href="{% url 'contacts' %}" class="search-refresh-btn" title="reset your search">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </a>
+                </div>
+            </form>
         </div>
         <div class="col-4">
             <h2 class="header">Inbox</h2>
