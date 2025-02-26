@@ -20,7 +20,7 @@ def contacts(request):
         if 'q' in request.GET:
             query = request.GET['q']
 
-            queries = Q(name__icontains=query) | Q(subject__icontains=query)
+            queries = Q(name__icontains=query) | Q(subject__icontains=query) | Q(message__icontains=query)
 
             inbox = inbox.filter(queries)
 

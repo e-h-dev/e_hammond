@@ -81,6 +81,7 @@
                             <p class="inbox-subject">no subject</p>
                             {% endif %}
                         </a>
+                        <span style="display:none;">{{ i.message }}</span>
                     </div>
                     <div class="col-3">
                         <a href="{% url 'open_message' i.id %}">
@@ -115,6 +116,7 @@
                             <p class="inbox-subject">no subject</p>
                             {% endif %}
                         </a>
+                        <span style="display:none;">{{ i.message }}</span>
                     </div>
                     <div class="col-3">
                         <a href="{% url 'open_message' i.id %}">
