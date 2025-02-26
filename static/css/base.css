@@ -517,11 +517,11 @@ input[type="radio"]{
 .search-bar{
   position: relative;
   z-index: 99999999999;
-  background-color: var(--text-color);
-  border-radius: 20px;
+  background-color: rgba(80, 77, 100, 0.2);
+  border-radius: 50px;
   width:450px;
   height:60px;
-  color:#f9f9f9;
+  color:var(--text-color);
   border:none;
   outline:none;
   left:40px;
@@ -530,10 +530,14 @@ input[type="radio"]{
   font-size: 1.3rem;
 }
 
+.search-bar:focus{
+  background-color: #f9f9f9;
+}
+
 .search-refresh-btn{
   border:none;
   outline:none;
-  color:#f9f9f9;
+  color:var(--text-color);
   font-size:1.5rem;
   background-color: transparent;
   position: relative;
