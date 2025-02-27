@@ -50,7 +50,7 @@
                                         <div class="icon"><i class="fa-solid fa-user"></i></div>
                                         {% if request.user.is_authenticated %}
                                             <div class="hello">
-                                                Hello {{ user.username|capfirst }}
+                                                <span class="d-none d-md-block">Hello</span> {{ user.username|capfirst }}
                                             </div>
                                         {% else %}
                                             Login/Register
@@ -68,7 +68,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 d-none d-md-block">
                                 {% if request.user.is_authenticated %}
                                     <div class="message-box">
                                         <a href="{% url 'contacts' %}">

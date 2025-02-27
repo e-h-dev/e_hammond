@@ -55,7 +55,7 @@ a:hover{
 
 .hello{
   width:max-content;
-  padding-left: 10px;
+  padding-left: 20px;
 }
 
 .bottom-header{
@@ -1020,6 +1020,10 @@ p input:active{
 
 
 @media screen and (max-width: 850px){
+.hello{
+  margin-left: 20px;
+}
+
   .image-position{
     left:23%;
   }
@@ -1030,7 +1034,7 @@ p input:active{
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
   /* .logo-logo{
     height:30px;
     width:30px;
@@ -1055,6 +1059,33 @@ p input:active{
     text-align: center;
     font-size: 0.6rem;
   } */
+
+  .mobile-nav-toggle,
+  .mobile-nav-toggle-close{
+    color:var(--text-color);
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 1;
+    top:-150px;
+    left:110%;
+    width:fit-content
+  }
+
+  .mobile-nav-toggle-close{
+    display:none
+  }
+
+  .dropdown{
+    top:-120px;
+    left:70%;
+    width:40%;
+  }
+
+  .hello{
+    width:40%;
+    text-align: center;
+  }
+
   .info-box{
     height: auto;
     border-radius: 20px;
@@ -1065,6 +1096,10 @@ p input:active{
 
   .portfolio-btn{
     font-size: 1.2rem;
+  }
+
+  .header{
+    font-size: 1.5rem;
   }
 
   .porfolio-image{

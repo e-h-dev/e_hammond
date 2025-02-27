@@ -2,6 +2,21 @@
     <div class="mobile-nav-toggle"><i class="fa-solid fa-bars"></i></div>
     <div class="mobile-nav-toggle-close"><i class="fa-solid fa-bars"></i></div>
     <div class="mobile-nav-container shadow">
+        {% if request.user.is_authenticated %}
+        <p class="d-block d-md-none">
+            <a href="{% url 'contacts' %}">
+                <i class="fa-regular fa-envelope-open"></i>
+                Inbox ({{ unread_messages }})
+                {% if reply_num >= 1 %} <span class="new-reply shadow">New Replies ({{ reply_num }})</span>{% endif %}
+            </a>
+        </p>
+        {% else %}
+        <p class="d-block d-md-none" id="no-user-message" onclick="noUser()">
+            <i class="fa-regular fa-envelope-open"></i>
+            Send a message
+        </p>
+        {% endif %}
+        
         <p>
             <a href="{% url 'portfolio' %}">{% block custom_style %}<i class="fa-solid fa-briefcase"></i> Portfolio{% endblock %}</a>
         </p>
@@ -15,18 +30,4 @@
             <a href="/media/CV.pdf" target="_blank"><i class="fa-solid fa-download"></i> Download CV</a>
         </p>
     </div>
-    <!-- <ul>
-        <li>
-            <a href="}"></a>
-        </li>
-        <li>
-            <a href="" target="_blank"></a>
-        </li>
-        <li>
-            <a href="" target="_blank"></a>
-        </li>
-        <li>
-            <a href="" target="_blank"></a>
-        </li>
-    </ul> -->
 </div>
