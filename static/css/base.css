@@ -1075,6 +1075,14 @@ p input:active{
     display:none
   }
 
+  .mobile-nav-container{
+    z-index: 99999999999999999;
+    padding:20px;
+    top:-120px;
+    left:40%;
+    display:none;
+  }
+
   .dropdown{
     top:-120px;
     left:70%;
