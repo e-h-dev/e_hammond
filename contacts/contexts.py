@@ -11,7 +11,8 @@ def contacts_inbox(request):
         user_inbox = get_object_or_404(User, username=request.user)
         inbox = Contacts.objects.filter(send_to=user_inbox)
         replied = Replied.objects.filter(name=user_inbox)
-        reply_message = Contacts.objects.filter(new_reply=True)
+        reply_message = Contacts.objects.filter(
+            new_reply=True, name=user_inbox)
 
         unread_messages = inbox.filter(read=False).count()
 
