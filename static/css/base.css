@@ -550,6 +550,14 @@ input[type="radio"]{
   color:rgb(145, 143, 160);
 }
 
+/* styles for search-bar in mobile */
+.mobile-form{
+  position: relative;
+  left:15%;
+  top:-10px;
+}
+
+
 .inbox-subheader{
   position: relative;
   z-index: 2;
@@ -1032,6 +1040,74 @@ p input:active{
     left:15%;
     width:550px;
   }
+
+  /* inbox page */
+
+  .all-inbox-display{
+    position:relative;
+    top:80px;
+    margin-left:10px;
+    margin-right:10px;
+  }
+
+  .compose{
+    color:var(--text-color);
+    margin:10px;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    top:40px;
+  }
+  
+  .sent-messages{
+    right:100px;
+    top:40px;
+    height:50px;
+  }
+
+  .inbox-name{
+    font-size: 1rem;
+  }
+  
+  .inbox-subject{
+    font-size: 0.9rem;
+  }
+  
+  .inbox-date-time{
+    font-size: 0.7rem;
+  }
+
+  .new-reply-load-box{
+    right:30px;
+    padding:0 10px 0;
+    width:250px;
+    height:75px;
+    overflow-y: scroll;
+  }
+  
+  .new-reply-load-box h4{
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .new-reply-load{
+    text-align:center;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .new-reply-name{
+    font-size:0.7rem;
+    font-weight: 600;
+  }
+  
+  .new-reply-subject{
+    display:none;
+  }
+
 }
 
 @media screen and (max-width: 430px) {

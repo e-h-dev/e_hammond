@@ -6,7 +6,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-4">
-            <form action="{% url 'contacts' %}" method="GET">
+            <form action="{% url 'contacts' %}" method="GET" class="d-none d-lg-block">
                 <div class="search-bar-container">
                     <input class="search-bar shadow ml-5" type="text" name="q" placeholder="Search inbox">
                     <button class="search-refresh-btn" type="submit">
@@ -40,98 +40,122 @@
             {% endif %}
         </div>
     </div>
+    <div class="row d-lg-none">
+        <form action="{% url 'contacts' %}" method="GET" class="mobile-form">
+            <div class="search-bar-container">
+                <input class="search-bar shadow ml-5" type="text" name="q" placeholder="Search inbox">
+                <button class="search-refresh-btn" type="submit">
+                    <i class="fas fa-search"></i> 
+                </button>
+                <a href="{% url 'contacts' %}" class="search-refresh-btn" title="reset your search">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </a>
+            </div>
+        </form>
+    </div>
     <div class="inbox-header">
         Inbox ({{ unread_messages }})
     </div>
     <div class="inbox-subheader">
         Total Messages: <strong>{{ message_count }}</strong>
     </div>
-    <div class="inbox-header">
-        <a href="{% url 'compose_message' %}" class="compose shadow">Compose message <i class="fa-solid fa-pen-fancy"></i></a>
-    </div>
-    <div class="inbox-header">
-        <a href="{% url 'sent_messages' %}" class="sent-messages shadow">Sent messages </a>
-    </div>
-    {% for i in inbox %}
     <div class="row">
-        <div class="col-3">
+        <div class="col-4 col-md-6">
+            <div class="inbox-header">
+                <a href="{% url 'compose_message' %}" class="compose shadow">Compose message <i class="fa-solid fa-pen-fancy"></i></a>
+            </div>
+            <div class="inbox-header d-lg-block d-none">
+                <a href="{% url 'sent_messages' %}" class="sent-messages shadow">Sent messages </a>
+            </div>
         </div>
-        {% if i.send_to == user.username %}
-        <div class="col-8">
-            <div class="message-display">
-                <div class="row message-container {% if i.read %}opened-message{% else %}unread-message{% endif %} shadow">
-                    <div class="col-3">
-                        <a href="{% url 'open_message' i.id %}">
-                            <p class="inbox-name">{{ i.name }}{% if i.new_reply == True %} <span class="new-reply ml-3 shadow">New</span>
+        <div class="col-md-6 d-lg-none d-block">
+            <div class="inbox-header">
+                <a href="{% url 'sent_messages' %}" class="sent-messages shadow">Sent messages </a>
+            </div>
+        </div>
+    </div>
+    <div class="all-inbox-display">
+        {% for i in inbox %}
+        <div class="row">
+            <div class="col-lg-3 d-none d-lg-block">
+            </div>
+            {% if i.send_to == user.username %}
+            <div class="col-lg-8 col-md-12">
+                <div class="message-display">
+                    <div class="row message-container {% if i.read %}opened-message{% else %}unread-message{% endif %} shadow">
+                        <div class="col-3">
+                            <a href="{% url 'open_message' i.id %}">
+                                <p class="inbox-name">{{ i.name }}{% if i.new_reply == True %} <span class="new-reply ml-3 shadow">New</span>
+                                    {% endif %}
+                                </p>
+                            </a>
+                            {% if i.read %}
+                            <div class="unread">
+                                <a href="{% url 'mark_unread' i.id %}" class="unread-icon" title="Mark as unread">
+                                    <i class="fa-solid fa-envelope-circle-check"></i>
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-6">
+                            <a href="{% url 'open_message' i.id %}">
+                                {% if i.subject %}
+                                <p class="inbox-subject">{{ i.subject }}</p>
+                                {% else %}
+                                <p class="inbox-subject">no subject</p>
                                 {% endif %}
-                            </p>
-                        </a>
-                        {% if i.read %}
-                        <div class="unread">
-                            <a href="{% url 'mark_unread' i.id %}" class="unread-icon" title="Mark as unread">
-                                <i class="fa-solid fa-envelope-circle-check"></i>
+                            </a>
+                            <span style="display:none;">{{ i.message }}</span>
+                        </div>
+                        <div class="col-3">
+                            <a href="{% url 'open_message' i.id %}">
+                                <p class="inbox-date-time">{{ i.date }} {{ i.time }}</p>
                             </a>
                         </div>
-                        {% endif %}
-                    </div>
-                    <div class="col-6">
-                        <a href="{% url 'open_message' i.id %}">
-                            {% if i.subject %}
-                            <p class="inbox-subject">{{ i.subject }}</p>
-                            {% else %}
-                            <p class="inbox-subject">no subject</p>
-                            {% endif %}
-                        </a>
-                        <span style="display:none;">{{ i.message }}</span>
-                    </div>
-                    <div class="col-3">
-                        <a href="{% url 'open_message' i.id %}">
-                            <p class="inbox-date-time">{{ i.date }} {{ i.time }}</p>
-                        </a>
                     </div>
                 </div>
             </div>
+            {% endif %}
+            <div class="col-1 d-none d-lg-block"></div>
         </div>
-        {% endif %}
-        <div class="col-1"></div>
-    </div>
-    {% if i.name == user.username %}
-    <div class="row">
-        <div class="col-3"></div>
-        {% if i.has_reply == True %}
-        <div class="col-8">
-            <div class="message-display">
-                <div class="row message-container {% if i.read %}opened-message{% else %}unread-message{% endif %} shadow">
-                    <div class="col-3">
-                        <a href="{% url 'open_message' i.id %}">
-                            <p class="inbox-name">{{ i.name }}{% if i.new_reply == True %} <span class="new-reply ml-3 shadow">New</span>
-                            {% endif %}</p>
-                        </a>
-                        
-                    </div>
-                    <div class="col-6">
-                        <a href="{% url 'open_message' i.id %}">
-                            {% if i.subject %}
-                            <p class="inbox-subject">{{ i.subject }}</p>
-                            {% else %}
-                            <p class="inbox-subject">no subject</p>
-                            {% endif %}
-                        </a>
-                        <span style="display:none;">{{ i.message }}</span>
-                    </div>
-                    <div class="col-3">
-                        <a href="{% url 'open_message' i.id %}">
-                            <p class="inbox-date-time">{{ i.date }} {{ i.time }}</p>
-                        </a>
+        {% if i.name == user.username %}
+        <div class="row">
+            <div class="col-lg-3 d-none d-lg-block"></div>
+            {% if i.has_reply == True %}
+            <div class="col-lg-8 col-md-12">
+                <div class="message-display">
+                    <div class="row message-container {% if i.read %}opened-message{% else %}unread-message{% endif %} shadow">
+                        <div class="col-3">
+                            <a href="{% url 'open_message' i.id %}">
+                                <p class="inbox-name">{{ i.name }}{% if i.new_reply == True %} <span class="new-reply ml-3 shadow">New</span>
+                                {% endif %}</p>
+                            </a>
+                            
+                        </div>
+                        <div class="col-6">
+                            <a href="{% url 'open_message' i.id %}">
+                                {% if i.subject %}
+                                <p class="inbox-subject">{{ i.subject }}</p>
+                                {% else %}
+                                <p class="inbox-subject">no subject</p>
+                                {% endif %}
+                            </a>
+                            <span style="display:none;">{{ i.message }}</span>
+                        </div>
+                        <div class="col-3">
+                            <a href="{% url 'open_message' i.id %}">
+                                <p class="inbox-date-time">{{ i.date }} {{ i.time }}</p>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+            {% endif %}
+            <div class="col-1 d-none d-lg-block"></div>
         </div>
         {% endif %}
-        <div class="col-1"></div>
+        {% endfor %}
     </div>
-    {% endif %}
-    {% endfor %}
 </div>
 
 {% endblock %}
