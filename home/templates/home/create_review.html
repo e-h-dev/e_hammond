@@ -47,6 +47,7 @@
 {% endblock %}
 
 {% block postloadjs %}
+{{ block.super }}
     <script>
         $('.star-1').click(function(){
             $('.star-1-1').css('font-weight', '600')

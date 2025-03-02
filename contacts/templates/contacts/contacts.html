@@ -161,6 +161,7 @@
 {% endblock %}
 
 {% block postloadjs %}
+{{ block.super }}
 <script>
     $('.reply-box-close').click(function(){
         $('.new-reply-load-box').css('display', 'none')
