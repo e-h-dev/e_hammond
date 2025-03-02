@@ -720,7 +720,7 @@ input[type="radio"]{
   color: var(--text-color);
 }
 
-/* box to dispaly links to replied messages */
+/* box to display links to replied messages */
 
 .reply-box-close{
   font-weight: bolder;
@@ -901,6 +901,17 @@ input[type="radio"]{
   border-radius: 5px;
   font-weight: 600;
   animation: flash 2s linear infinite;
+}
+
+.reply-style{
+  text-align: center;
+  padding: 10px;
+}
+
+.reply-placeholder{
+  font-weight: 800;
+  text-align: center;
+  font-size: 1.3rem;
 }
 
 @keyframes flash {

@@ -21,13 +21,13 @@
                         <input type="text" id="id_name" name="name" value="{{ user.username }}" class="user-input-remove">
                     
                         <div>
-                            <p>Reply to</p>
-                            <input type="text" id="id_send_to" name="send_to" value="{{ inbox.name }}" class="input">
+                            <p class="reply-style">Reply to</p>
+                            <input type="text" id="id_send_to" name="send_to" value="{{ inbox.name }}" class="input reply-placeholder">
                         </div>
                     
                         <div>
-                            <p>Subject:</p>
-                            <input type="text" id="id_subject" name="subject" value="{{ inbox.subject }}" class="input" placeholder="Subject">
+                            <p class="reply-style">Subject:</p>
+                            <input type="text" id="id_subject" name="subject" value="{{ inbox.subject }}" class="input reply-placeholder">
                         </div>
                     
                         <textarea name="message" id="id_message" class="textarea" placeholder="Your message"></textarea>
