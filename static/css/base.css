@@ -716,6 +716,10 @@ input[type="radio"]{
   /* margin-bottom:40px; */
 }
 
+.message-row-replied{
+  background-color: #cf99ac;
+}
+
 .message-display a{
   color: var(--text-color);
 }

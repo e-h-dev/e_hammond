@@ -10,22 +10,37 @@ def contacts_inbox(request):
     if user:
         user_inbox = get_object_or_404(User, username=request.user)
         inbox = Contacts.objects.filter(send_to=user_inbox)
+        sent_messages = Contacts.objects.filter(name=user_inbox)
         replied = Replied.objects.filter(name=user_inbox)
         reply_message = Contacts.objects.filter(
-            new_reply=True, name=user_inbox)
+             new_reply=True, send_to=user_inbox)
+        reply_inbox_message = Contacts.objects.filter(
+             new_reply=True, name=user_inbox)
+        # reply_name = Replied.objects.filter(send_to=user_inbox)
 
-        unread_messages = inbox.filter(read=False).count()
+        # print(reply_name)
 
-        message_count = len(inbox)
+        unread_recieved_messages = inbox.filter(read=False).count()
+        unread_sent_messages = sent_messages.filter(read=False).count()
 
+        unread_messages = unread_recieved_messages + unread_sent_messages
+
+        recieved_message_count = len(inbox)
         reply_num = len(reply_message)
+        reply_inbox = len(reply_inbox_message)
+        total_reply = reply_num + reply_inbox
+        # replied_message_count = len(replied)
+
+        print(total_reply)
+
+        message_count = recieved_message_count + total_reply
 
         context = {
             'inbox': inbox,
             'message_count': message_count,
             'unread_messages': unread_messages,
             'replied': replied,
-            'reply_num': reply_num,
+            'total_reply': total_reply,
         }
     else:
         inbox = Contacts.objects.all()
