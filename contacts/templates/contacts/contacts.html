@@ -23,7 +23,7 @@
         </div>
         <div class="col-4">
             {% if total_reply >= 1 %}
-            <div class="new-reply-load-box shadow">
+            <div class="new-reply-load-box shadow d-none d-md-block">
                 <div class="reply-box-close"><i class="fa-solid fa-xmark"></i></div>
                 <h4>New replies ({{ total_reply }})</h4>
                 {% for i in inbox %}
@@ -60,18 +60,16 @@
         Total Messages: <strong>{{ message_count }}</strong>
     </div>
     <div class="row">
-        <div class="col-4 col-md-6">
-            <div class="inbox-header">
+        <div class="col-12 col-md-6 col-sm-12">
+            <div>
                 <a href="{% url 'compose_message' %}" class="compose shadow">Compose message <i class="fa-solid fa-pen-fancy"></i></a>
             </div>
-            <div class="inbox-header d-lg-block d-none">
+            <div class="d-lg-block d-none">
                 <a href="{% url 'sent_messages' %}" class="sent-messages shadow">Sent messages </a>
             </div>
         </div>
         <div class="col-md-6 d-lg-none d-block">
-            <div class="inbox-header">
-                <a href="{% url 'sent_messages' %}" class="sent-messages shadow">Sent messages </a>
-            </div>
+            <a href="{% url 'sent_messages' %}" class="sent-messages shadow">Sent messages </a>
         </div>
     </div>
     <div class="all-inbox-display">
@@ -98,18 +96,24 @@
                             {% endif %}
                         </div>
                         <div class="col-6">
-                            <a href="{% url 'open_message' i.id %}">
-                                {% if i.subject %}
-                                <p class="inbox-subject">{{ i.subject }}</p>
-                                {% else %}
-                                <p class="inbox-subject">no subject</p>
-                                {% endif %}
-                            </a>
-                            <span style="display:none;">{{ i.message }}</span>
+                            <div class="d-none d-md-block">
+                                <a href="{% url 'open_message' i.id %}">
+                                    {% if i.subject %}
+                                    <p class="inbox-subject">{{ i.subject }}</p>
+                                    {% else %}
+                                    <p class="inbox-subject">no subject</p>
+                                    {% endif %}
+                                </a>
+                            </div>
+                            <div class="d-block d-md-none">
+                                {% if i.new_reply == True %} <span class="new-reply ml-3 shadow">New</span>
+                                    {% endif %}
+                            </div>
+                            <span style="display:none;">{{ i.message }}{{ i.subject }}</span>
                         </div>
                         <div class="col-3">
                             <a href="{% url 'open_message' i.id %}">
-                                <p class="inbox-date-time">{{ i.date }} {{ i.time }}</p>
+                                <p class="inbox-date-time">{{ i.date }} <span class="d-none d-md-block">{{ i.time }}</span></p>
                             </a>
                         </div>
                     </div>
@@ -132,18 +136,20 @@
                             </a>
                         </div>
                         <div class="col-6">
-                            <a href="{% url 'open_message' i.id %}">
-                                {% if i.subject %}
-                                <p class="inbox-subject">{{ i.subject }}</p>
-                                {% else %}
-                                <p class="inbox-subject">no subject</p>
-                                {% endif %}
-                            </a>
-                            <span style="display:none;">{{ i.message }}</span>
+                            <div class="d-none d-md-block">
+                                <a href="{% url 'open_message' i.id %}">
+                                    {% if i.subject %}
+                                    <p class="inbox-subject">{{ i.subject }}</p>
+                                    {% else %}
+                                    <p class="inbox-subject">no subject</p>
+                                    {% endif %}
+                                </a>
+                            </div>
+                            <span style="display:none;">{{ i.message }}{{ i.subject }}</span>
                         </div>
                         <div class="col-3">
                             <a href="{% url 'open_message' i.id %}">
-                                <p class="inbox-date-time">{{ i.date }} {{ i.time }}</p>
+                                <p class="inbox-date-time">{{ i.date }} <span class="d-none d-md-block">{{ i.time }}</span></p>
                             </a>
                         </div>
                     </div>

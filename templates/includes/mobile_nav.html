@@ -16,7 +16,22 @@
             Send a message
         </p>
         {% endif %}
-        
+        {% if total_reply >= 1 %}
+            <div class="new-reply-load-box">
+                <div class="reply-box-close"><i class="fa-solid fa-xmark"></i></div>
+                <h4>New replies ({{ total_reply }})</h4>
+                {% for i in inbox %}
+                {% if i.new_reply %}
+                <a href="{% url 'open_message' i.id %}">
+                  <div class="new-reply-load">
+                    <span class="new-reply-name">{{ i.name }}</span>
+                    <span class="new-reply-subject">{{ i.subject }}</span>
+                  </div>
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
         <p>
             <a href="{% url 'portfolio' %}">{% block custom_style %}<i class="fa-solid fa-briefcase"></i> Portfolio{% endblock %}</a>
         </p>

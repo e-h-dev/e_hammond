@@ -82,7 +82,7 @@ a:hover{
 
 .mobile-nav-container{
   position: relative;
-  z-index: 2;
+  z-index: 5;
   background-color: #f9f9f9;
   border-radius: 10px;
   width:max-content;
@@ -508,7 +508,7 @@ input[type="radio"]{
 
 .search-bar-container{
   position: relative;
-  z-index: 99999999999;
+  z-index: 4;
   border-radius: 20px;
   width:400px;
   height:60px;
@@ -516,7 +516,7 @@ input[type="radio"]{
 
 .search-bar{
   position: relative;
-  z-index: 99999999999;
+  z-index: 4;
   background-color: rgba(80, 77, 100, 0.2);
   border-radius: 10px;
   width:450px;
@@ -578,11 +578,15 @@ input[type="radio"]{
 }
 
 .compose{
-  color:var(--text-color);
+  font-family: var(--main-font);
+  font-size: 1.2rem;
+  color: var(--text-color);
+  font-weight: 600;
   margin:10px;
   border-radius: 10px;
   padding: 20px;
   position: relative;
+  z-index: 2;
   top:50px;
 }
 
@@ -592,11 +596,15 @@ input[type="radio"]{
 }
 
 .sent-messages{
-  color:var(--text-color);
+  font-family: var(--main-font);
+  font-size: 1.2rem;
+  color: var(--text-color);
+  font-weight: 600;
   margin:5px;
   border-radius: 10px;
   padding: 15px;
   position: relative;
+  z-index: 2;
   top:100px;
 }
 
@@ -713,7 +721,6 @@ input[type="radio"]{
   width:100%;
   text-align: justify;
   cursor: pointer;
-  /* margin-bottom:40px; */
 }
 
 .message-row-replied{
@@ -1126,30 +1133,10 @@ p input:active{
 }
 
 @media screen and (max-width: 430px) {
-  /* .logo-logo{
-    height:30px;
-    width:30px;
-    position: relative;
-    left:40%;
+  .opaque{
+    width:fit-content;
+    height: fit-content;
   }
-  
-  .logo{
-      height:50px;
-      width:100px;
-      top:10px;
-      padding:10px;
-  }
-  
-  .logo h5{
-    text-align: center;
-    font-size: 0.8rem;
-    border-bottom: 1px solid rgba(80, 77, 100, 0.2);
-  }
-  
-  .logo h6{
-    text-align: center;
-    font-size: 0.6rem;
-  } */
 
   .mobile-nav-toggle,
   .mobile-nav-toggle-close{
@@ -1214,4 +1201,70 @@ p input:active{
     left:5px;
     width:300px;
   }
+
+  /* styles for search-bar in mobile */
+  .search-bar-container{
+    width:300px;
+    height:40px;
+  }
+  
+  .search-bar{
+    width:300px;
+    height:40px;
+    left:-50px;
+    padding-left:10px;
+    font-size: 1rem;
+  }
+  
+  .search-refresh-btn{
+    font-size:1rem;
+    left:240px;
+    bottom:35px;
+    z-index: 999999999999;
+  }
+
+  /* box to display links to replied messages */
+  .new-reply-load-box{
+    position: relative;
+    right:60px;
+    z-index: 3;
+    padding:0 20px 0;
+    width:150px;
+    height:150px;
+    overflow-y: scroll;
+  }
+  
+  .new-reply-load-box h4{
+    text-align: center;
+  }
+
+  /* compose and sent-messages link buttons */
+  .compose{
+    color:var(--text-color);
+    /* margin:10px; */
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    top:20px;
+    left:0;
+    font-size: 1rem;
+    width:200px;
+  }
+  
+  .sent-messages{
+    left:200px;
+    top:-5px;
+    height:40px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .all-inbox-display{
+    position:relative;
+    top:40px;
+    margin-left:5px;
+    margin-right:5px;
+  }
+
+  
 }
