@@ -717,7 +717,7 @@ input[type="radio"]{
 }
 
 .message-row-replied{
-  background-color: #cf99ac;
+  background-color: rgba(161, 216, 164, 0.3);
 }
 
 .message-display a{
@@ -761,7 +761,7 @@ input[type="radio"]{
   color: var(--text-color);
   font-weight: 800;
   font-size: 1.1rem;
-  background-color: rgba(80, 77, 100, 0.3);
+  background-color: rgba(161, 216, 164, 0.3);
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 5px;
