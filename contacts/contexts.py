@@ -16,9 +16,6 @@ def contacts_inbox(request):
              new_reply=True, send_to=user_inbox)
         reply_inbox_message = Contacts.objects.filter(
              new_reply=True, name=user_inbox)
-        # reply_name = Replied.objects.filter(send_to=user_inbox)
-
-        # print(reply_name)
 
         unread_recieved_messages = inbox.filter(read=False).count()
         unread_sent_messages = sent_messages.filter(read=False).count()
@@ -29,11 +26,11 @@ def contacts_inbox(request):
         reply_num = len(reply_message)
         reply_inbox = len(reply_inbox_message)
         total_reply = reply_num + reply_inbox
-        # replied_message_count = len(replied)
+        replied_displayed = len(replied)
 
-        print(total_reply)
+        message_count = recieved_message_count + replied_displayed
 
-        message_count = recieved_message_count + total_reply
+        print(message_count)
 
         context = {
             'inbox': inbox,
