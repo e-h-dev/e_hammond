@@ -45,5 +45,32 @@ class ContactAdmin(admin.ModelAdmin):
     ordering = ('-subject',)
 
 
+class ReplyAdmin(admin.ModelAdmin):
+    readonly_fields = (
+        'id',
+        # 'name',
+        # 'email',
+        # 'phone',
+        # 'send_to',
+        # 'subject',
+        # 'message',
+        'date',
+        'time',
+        #'read',
+    )
+
+    fields = (
+        'id',
+        'name',
+        'send_to',
+    )
+
+    list_display = (
+        'id',
+        'name',
+        'send_to',
+    )
+
+
 admin.site.register(Contacts, ContactAdmin)
-admin.site.register(Replied)
+admin.site.register(Replied, ReplyAdmin)
