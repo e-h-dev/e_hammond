@@ -881,8 +881,18 @@ input[type="radio"]{
   color: var(--text-color);
 }
 
+.top-message{
+  width:140%;
+  position: relative;
+  background-color: #e2e2e9;
+  padding:30px;
+  margin:20px;
+  border-radius: 10px;
+}
+
 
 .thread-load{
+  position: relative;
   background-color: #f9f9f9;
   padding:30px;
   margin:20px;
@@ -1264,6 +1274,35 @@ p input:active{
     top:40px;
     margin-left:5px;
     margin-right:5px;
+  }
+
+  .read-message{
+    left:-20px;
+    width:110%;
+  }
+
+  .top-message{
+    position: relative;
+    left:-30px;
+    right:-30px;
+  }
+
+  .thread-load{
+    left:-10%;
+    padding:30px;
+    margin:20px;
+    border-radius: 10px;
+    width:90%;
+    font-size: 0.9rem;
+  }
+  
+  .thread-load2{
+    left:10%;
+    padding:30px;
+    margin:20px;
+    border-radius: 10px;
+    width:90%;
+    font-size: 0.9rem;
   }
 
   
