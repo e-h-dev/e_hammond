@@ -121,6 +121,12 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': dj_database_url.parse(
+#         'postgresql://neondb_owner:2e5XYEGBMQdh@ep-shy-band-a2z3bwdc.'
+#         'eu-central-1.aws.neon.tech/scold_easel_harm_1174')
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
