@@ -304,6 +304,25 @@ li a:hover{
   background-color: rgb(145, 143, 160);
 }
 
+.profile-image{
+  position: relative;
+  z-index: 2;
+  background-image: url('/media/profile_image.png');
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  height:175px;
+  width:130px;
+}
+
+.profile-image-opaque{
+  position: relative;
+  z-index: 3;
+  background-color: rgba(80, 77, 100, 0.3);
+  border-radius: 10px;
+  height:175px;
+  width:130px;
+}
+
 .sub-header{
   color:rgb(60, 52, 128);
 }
@@ -370,6 +389,35 @@ li a:hover{
 .review{
   padding-top: 5px;
 }
+
+.pagination{
+  position: relative;
+  z-index: 2;
+  font-size: 1.3rem;
+  left:30%;
+  text-align: center;
+  color: var(--text-color);
+  font-family: var(--main-font);
+  height:80px;
+  margin-top: 30px;
+}
+
+.next_page_btn{
+  width:50px;
+  height:20px;
+  color:#f9f9f9;
+  background-color: var(--text-color);
+  padding:10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.next_page_btn:hover{
+  color:var(--text-color);
+  background-color: #f9f9f9;
+}
+
+/* add a review page */
 
 .review-form{
   position: relative;
