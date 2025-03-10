@@ -6,7 +6,6 @@
     <div class="row">
         <div class="col-lg-2 col-md-1">
             <div class="profile-image shadow">
-                <!-- <img src="/media/profile_image_3.JPG" alt="profile-image"> -->
                 <div class="profile-image-opaque"></div>
             </div>
         </div>
@@ -37,7 +36,7 @@
             <h3>Reviews ({{ reviews.count }})</h3>
         </div>
     </div>
-    <div class="row">
+    <div class="row" id="reviews">
             {% for review in page_obj %}
             <div class="col-lg-4 col-md-6 review-section">
                 <div class="user-review shadow">
@@ -89,8 +88,8 @@
             <div class="pagination">
                 <span class="step-links">
                     {% if page_obj.has_previous %}
-                        <a href="?page=1" class="next_page_btn">&laquo; first</a>
-                        <a href="?page={{ page_obj.previous_page_number }}" class="next_page_btn">previous</a>
+                        <a href="?page=1#reviews" class="next_page_btn">&laquo; first</a>
+                        <a href="?page={{ page_obj.previous_page_number }}#reviews" class="next_page_btn shadow">previous</a>
                     {% endif %}
             
                     <span class="current">
@@ -98,8 +97,8 @@
                     </span>
             
                     {% if page_obj.has_next %}
-                        <a href="?page={{ page_obj.next_page_number }}" class="next_page_btn">next</a>
-                        <a href="?page={{ page_obj.paginator.num_pages }}" class="next_page_btn">last &raquo;</a>
+                        <a href="?page={{ page_obj.next_page_number }}#reviews" class="next_page_btn shadow">next</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}#reviews" class="next_page_btn shadow">last &raquo;</a>
                     {% endif %}
                 </span>
             </div>
