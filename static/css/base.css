@@ -1283,6 +1283,7 @@ p input:active{
   }
 
   /* box to display links to replied messages */
+
   .new-reply-load-box{
     position: relative;
     right:60px;
@@ -1291,6 +1292,7 @@ p input:active{
     width:150px;
     height:150px;
     overflow-y: scroll;
+    display: none;
   }
   
   .new-reply-load-box h4{
