@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+# import dj_database_url
 from pathlib import Path
 if os.path.exists("env.py"):
     import env
@@ -30,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['8000-ehdev-ehammond-78uvrqtqtmb.ws.codeinstitute-ide.net']
+# ALLOWED_HOSTS = ['8000-ehdev-ehammond-78uvrqtqtmb.ws.codeinstitute-ide.net']
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
@@ -122,9 +123,7 @@ DATABASES = {
 }
 
 # DATABASES = {
-#     'default': dj_database_url.parse(
-#         'postgresql://neondb_owner:2e5XYEGBMQdh@ep-shy-band-a2z3bwdc.'
-#         'eu-central-1.aws.neon.tech/scold_easel_harm_1174')
+#     'default': dj_database_url.parse(os.environ.get("DB_URL"))
 # }
 
 
@@ -133,16 +132,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'NumericPasswordValidator',
     },
 ]
 
