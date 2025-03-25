@@ -28,6 +28,34 @@
 </head>
 <body>
     <div class="opaque"></div>
+    {% block can_remove %}
+   {% if not request.user.is_authenticated %}
+   <div id="load-login-message">
+        <div class="login-on-load shadow">
+            <div class="close-message">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="shadow mini-logo">
+                <div class="logo-logo"></div>
+                <h5>Eli Hammond</h5>
+                <h6>Fullstack Developer</h6>
+            </div>
+            Why not login or register for an account!
+            <a href="{% url 'sign_in' %}">
+                <div class="mini-login load-btn">
+                    Login
+                </div>
+            </a>
+            <a href="{% url 'sign_up' %}">
+                <div class="mini-login load-btn">
+                    Register
+                </div>
+            </a>
+        </div>
+   </div>
+   {% endif %}
+   {% endblock %}
+
     <header>
         <nav>
             <div class="container-fluid">
@@ -121,6 +149,20 @@
 
     {% block postloadjs %}
     <script>
+        function onLoad(){
+            setTimeout(onLoadLoginRequest, 3500);
+            function onLoadLoginRequest(){
+            document.getElementById('load-login-message').style.display = 'block'
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", onLoad);
+
+        $('.close-message').click(function(){
+            $('#load-login-message').css('display', 'none')
+        });
+
+
         function noUser(){
             alert (
                 'Sorry you must be loged in to send a message'

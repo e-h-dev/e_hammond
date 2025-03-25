@@ -11,6 +11,66 @@ header{
     height:200px;
 }
 
+#load-login-message{
+  display:none;
+  background-color: rgba(80, 77, 100, 0.5);
+  position: fixed;
+  z-index: 3;
+  width:100%;
+  height:100%;
+  display: none;
+}
+
+.close-message{
+  color: var(--text-color);
+  position: relative;
+  left:120px;
+  top:-15px;
+  font-family: var(--main-font);
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mini-logo{
+  position: relative;
+  left:20px;
+  height: 120px;
+  width: 200px;
+  border-radius: 10px;
+  position: relative;
+  top: -10px;
+  z-index: 9999999999;
+  font-family: var(--main-font);
+  color: rgb(80, 77, 100);
+  padding: 10px;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, #fafafc, rgba(103, 102, 146, 0.1), rgba(80, 77, 100, 0.2));
+}
+
+.login-on-load{
+  background-color: #f9f9f9;
+  width:300px;
+  position: relative;
+  color: var(--text-color);
+  font-family: var(--main-font);
+  text-align: center;
+  font-size: 1.5rem;
+  z-index: 4;
+  left:40%;
+  top:20%;
+  border-radius: 10px;
+  padding:20px;
+}
+
+.load-btn{
+  width:150px;
+  margin:5px;
+  color:var(--text-color);
+  text-align: center;
+  position: relative;
+  left:40px;
+}
 
 .logo-logo{
   background-image: url("/media/small-logo.png");
@@ -1196,6 +1256,13 @@ p input:active{
     width:fit-content;
     height: fit-content;
   }
+
+  .login-on-load{
+    width:280px;
+    font-size: 1.2rem;
+    left:15%;
+  }
+  
 
   .mobile-nav-toggle,
   .mobile-nav-toggle-close{
