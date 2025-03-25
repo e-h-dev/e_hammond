@@ -106,7 +106,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
-LOGIN_URL = '/accounts/login/'
+LOGIN_URL = '/sign_in/sign_in'
 LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'e_hammond.wsgi.application'
@@ -123,7 +123,7 @@ DATABASES = {
 }
 
 # DATABASES = {
-#     'default': dj_database_url.parse(os.environ.get("DB_URL"))
+#     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 # }
 
 
