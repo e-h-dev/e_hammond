@@ -366,53 +366,6 @@ li a:hover{
   background-color: #f9f9f9;
 }
 
-.floating-pic{
-  position: relative;
-  z-index: 2;
-  top:-100px;
-  bottom:0px;
-  /* height:250px;
-  width: auto; */
-  /* background-color: pink;
-  display: none; */
-}
-
-.pic-changer{
-  height:150px;
-  width:150px;
-  position: relative;
-  /* left:40%; */
-  background-size: contain;
-  background-repeat: no-repeat;
-  animation:slide 10s linear;
-}
-
-@keyframes slide{
-  25% {
-    background-image: url('/media/country_hotel_home_rUfhsKG.png');
-    left:20%;
-  }
-
-  50%{
-    background-image: url('/media/what_the_capital_BptLmHt.png');
-    left:50%;
-  }
-
-  70% {
-    background-image: url('/media/trip_discoverer_home_r4ivIbg.png');
-    left:70%;
-  }
-  90% {
-    background-image: url('/media/desktop-home_IwGm8yg.png');
-    left:90%;
-  }
-
-  100%{
-    display:none;
-  }
-}
-
-
 .review-section{
   position: relative;
   z-index: 2;
