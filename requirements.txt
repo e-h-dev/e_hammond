@@ -9,6 +9,7 @@ distro==1.7.0
 dj-database-url==2.3.0
 Django==5.1.7
 django-allauth==0.50.0
+gunicorn==23.0.0
 httplib2==0.20.2
 idna==3.10
 importlib-metadata==4.6.4
@@ -19,8 +20,11 @@ lazr.restfulclient==0.14.4
 lazr.uri==1.0.6
 more-itertools==8.10.0
 oauthlib==3.2.0
+packaging==24.2
 pillow==11.1.0
 psycopg==3.2.6
+psycopg-binary==3.2.6
+psycopg-pool==3.2.6
 Pygments==2.11.2
 PyGObject==3.42.1
 PyJWT==2.3.0
