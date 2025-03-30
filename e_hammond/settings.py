@@ -33,7 +33,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-e-h-dev-e-hammond-2azd4pvsvj.app.codeanywhere.com',
-    'https://e-hammond-7f6468517ddb.herokuapp.com/'
+    'e-hammond-7f6468517ddb.herokuapp.com',
+    
     ]
 
 # ALLOWED_HOSTS = ['127.0.0.1']
