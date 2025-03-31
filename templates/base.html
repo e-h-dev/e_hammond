@@ -111,6 +111,11 @@
                                             <div class="icon"><i class="fa-regular fa-envelope-open"></i></div>
                                             Send a message
                                         </div>
+                                        <div id="no-user-message-2" class="shadow" onmouseleave="noUserClose()">
+                                            <p>You must be logged in to view messages</p>
+                                            <a href="{% url 'sign_in' %}" class="mini-login">Login</a>
+                                        </div>
+
                                     </div>
                                 {% endif %}
                             </div>
@@ -187,10 +192,13 @@
 
 
         function noUser(){
-            alert (
-                'Sorry you must be loged in to send a message'
-            );
+            document.getElementById('no-user-message-2').style.display = 'block';
         };
+
+        function noUserClose(){
+            document.getElementById('no-user-message-2').style.display = 'none';
+        }
+
 
         $('.mobile-nav-toggle').click(function(){
             $('.mobile-nav-container').css('display', 'block')
