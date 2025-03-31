@@ -332,6 +332,64 @@ li a:hover{
   z-index: 2;
 }
 
+/* toast messages */
+
+.messages{
+  position: relative;
+  z-index: 3;
+  background-color: rgba(80, 77, 100, 0.2);
+  height:50px;
+  width:500px;
+  font-family: var(--main-font);
+  color:var(--text-color);
+  padding-top:12px;
+  padding-left: 10px;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  animation:slide-in 0.5s linear;
+  border-top-right-radius:10px;
+  border-bottom-right-radius:10px;
+}
+
+@keyframes slide-in {
+  0%{
+    left:-500px;
+  }
+
+  
+  100%{
+    left:0;
+  }
+}
+
+.success-message{
+  border: solid 1px green;
+}
+
+.error-message{
+  border: solid 1px red;
+}
+
+.close-toast{
+  color: rgb(170, 37, 37);
+  position: absolute;
+  cursor:pointer;
+  font-size: 1.5rem;
+  left: 465px;
+  top: 7px;
+}
+
+.close-toast:hover{
+  color:var(--text-color)
+}
+
+ .fa-circle-xmark{
+  background-color: #f9f9f9;
+  border-radius: 50%;
+}
+
+
+
 /*---------------------------- overall styles */
 
 .button{
