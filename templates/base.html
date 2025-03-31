@@ -161,7 +161,7 @@
         {% endfor %}    
     </div>
     {% endif %}
-    
+
     {% block content %}
     {% endblock %}
 
@@ -179,6 +179,11 @@
         $('.close-message').click(function(){
             $('#load-login-message').css('display', 'none')
         });
+
+        $('.close-toast').click(function(){
+            $('.messages').css('display', 'none')
+        });
+
 
 
         function noUser(){
