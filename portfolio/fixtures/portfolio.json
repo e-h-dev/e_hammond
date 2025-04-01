@@ -40,7 +40,7 @@
             "description": "Floral Design is a B2C e-commerce store, the website was created for  an up and coming flower business. The site now is not for real purchases but is built with the potential to become fully functional in the future. The website is designed and implemented with Python and Django, HTML, CSS and some JavaScript. It specialises in selling ready-made flower arrangements to consumers online. However, it has to be noted that this site does not yet sell the products but will be open for business in the near future.",
             "mini_description": "A B2C e-commerce store for a flower business.",
             "website_url": "https://floral-design-abd35de492a3.herokuapp.com/",
-            "image": "desktop_home.png"
+            "image": "floral_design_home.png"
         }
     }
 ]
