@@ -1,0 +1,38 @@
+[
+    {
+        "pk":1,
+        "fields": {
+            "name": "Country Hotel",
+            "description": "Country Hotel is a fictional, family run hotel company. The company owns a hotel in the heart of the British countryside. As a small family run business, the publicity of the company had been only via other media outlets, social media, local phone books and the like. The family have decided, to expand the business, by creating their own website to publicise and promote their hotel and services. The decision was to create their own front-end website.",
+            "website": "https://e-h-dev.github.io/country-hotel/index.html",
+            "image": "country_hotel_home.png"
+        }
+    },
+    {
+        "pk":2,
+        "fields": {
+            "name": "What's the Capital",
+            "description": "What's the Capital, is a quiz game, designed to help the user access and retain knowledge of the Capitals of the world. This game will help resolve the long and drawn process of remembering the name of Capitals, from the hundreds of Countries in the world. The game is unique, since it offers two ways of playing. 1. A multiple choice method. 2. A chance for the user to type in their own answer. This is unique, as it is a very efficient way to improve the learning process. The game has a wide scope, offering quiz questions on almost 200 Countries.",
+            "website": "https://e-h-dev.github.io/what-is-the-capital/",
+            "image": "what_the_capital.png"
+        }
+    },
+    {
+        "pk":3,
+        "fields": {
+            "name": "Trip Discovere",
+            "description": "Trip Discoverer is an easy-to-use web app, designed for anyone to access. The website provides up to date and clear information, for anyone looking for a nice day out. The options range from family, to adult, to kid friendly places. Users can also sign in and add their own Trips for the benefit of others.",
+            "website": "https://trip-discoverer-efed3b671fae.herokuapp.com/",
+            "image": "trip_discoverer_home.png"
+        }
+    },
+    {
+        "pk":4,
+        "fields": {
+            "name": "Floral Design",
+            "description": "Floral Design is a B2C e-commerce store, the website was created for  an up and coming flower business. The site now is not for real purchases but is built with the potential to become fully functional in the future. The website is designed and implemented with Python and Django, HTML, CSS and some JavaScript. It specialises in selling ready-made flower arrangements to consumers online. However, it has to be noted that this site does not yet sell the products but will be open for business in the near future.",
+            "website": "https://floral-design-abd35de492a3.herokuapp.com/",
+            "image": "desktop_home.png"
+        }
+    }
+]
