@@ -12,7 +12,7 @@ class Contacts(models.Model):
     send_to = models.CharField(max_length=240)
     subject = models.CharField(max_length=52, null=True, blank=True)
     email = models.EmailField()
-    phone = models.IntegerField()
+    phone = models.CharField(max_length=25, null=True, blank=True)
     message = models.TextField()
     date = models.DateField(auto_now_add=True)
     time = models.TimeField(auto_now_add=True)
