@@ -17,21 +17,24 @@
                 <form action="{% url 'compose_message' %}" method="POST" class="contact-form shadow mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="main-compose-message-section">
+                        
                         <input type="text" id="id_name" name="name" value="{{ user.username }}" class="user-input-remove">
                     
-                        <input type="email" id="id_email" class="input" name="email" placeholder="email">
-                    
-                        <input type="text" id="id_phone" name="phone" class="input" placeholder="Phone number">
-
+                        {% if request.user.is_superuser %}
                         <input type="text" id="id_send_to" name="send_to" class="input" placeholder="Send to">
+                        <input type="email" id="id_email" class="user-input-remove" name="email" value="a1234@gmail.com">
                     
+                        <input type="text" id="id_phone" name="phone" class="user-input-remove" value="1234">
+                        {% else %}
+                        <input type="email" id="id_email" class="input" name="email" placeholder="Your Email">
+                    
+                        <input type="text" id="id_phone" name="phone" class="input" placeholder="Your Phone number">
+                        <input type="text" id="id_send_to" name="send_to" value="elihammond"  class="user-input-remove">
+                        {% endif %}
                         <input type="text" id="id_subject" name="subject" class="input" placeholder="Subject">
                     
                         <textarea name="message" id="id_message" class="textarea" placeholder="Your message"></textarea>
                     </div>
-                    <!-- <div>
-                        <input type="checkbox" id="id_new_message" name="new_mesage" value="True">
-                    </div> -->
                     
                     <div class="text-right">
                         <a href="{% url 'home' %}" class="shadow button cancel-btn">Cancel</a>
