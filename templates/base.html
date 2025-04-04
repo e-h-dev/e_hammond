@@ -173,7 +173,7 @@
     {% block postloadjs %}
     <script>
         function onLoad(){
-            setTimeout(onLoadLoginRequest, 3500);
+            setTimeout(onLoadLoginRequest, 10000);
             function onLoadLoginRequest(){
             document.getElementById('load-login-message').style.display = 'block'
             }
