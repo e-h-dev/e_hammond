@@ -17,8 +17,11 @@
                 <form action="{% url 'compose_message' %}" method="POST" class="contact-form shadow mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="main-compose-message-section">
-                        
+                        {% if request.user.is_authenticated %}
                         <input type="text" id="id_name" name="name" value="{{ user.username }}" class="user-input-remove">
+                        {% else %}
+                        <input type="text" id="id_name" name="name" class="input" placeholder="Your Name">
+                        {% endif %}
                     
                         {% if request.user.is_superuser %}
                         <input type="text" id="id_send_to" name="send_to" class="input" placeholder="Send to">

@@ -107,14 +107,17 @@
                                     </div>
                                 {% else %}
                                     <div class="message-box">
-                                        <div id="no-user-message" onclick="noUser()">
+                                        <!-- <div id="no-user-message" onclick="noUser()"> -->
+                                        <div id="no-user-message">
                                             <div class="icon"><i class="fa-regular fa-envelope-open"></i></div>
-                                            Send a message
+                                            <a href="{% url 'compose_message' %}">
+                                                Send a message
+                                            </a>
                                         </div>
-                                        <div id="no-user-message-2" class="shadow" onmouseleave="noUserClose()">
+                                        <!-- <div id="no-user-message-2" class="shadow" onmouseleave="noUserClose()">
                                             <p>You must be logged in to view messages</p>
                                             <a href="{% url 'sign_in' %}" class="mini-login">Login</a>
-                                        </div>
+                                        </div> -->
 
                                     </div>
                                 {% endif %}
