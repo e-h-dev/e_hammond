@@ -9,7 +9,7 @@ from .admin import ContactAdmin
 # Create your views here.
 
 
-@login_required
+# @login_required
 def contacts(request):
 
     inbox = Contacts.objects.all().order_by('-date', '-time')
@@ -88,7 +88,7 @@ def compose_message(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect(reverse('contacts'))
+            return redirect(reverse('home'))
         else:
             print(form.errors.as_data())
 
