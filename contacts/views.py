@@ -76,7 +76,7 @@ def mark_unread(request, contact_id):
     inbox = Contacts.objects.get(id=contact_id)
     inbox.read = False
     inbox.save()
-    messages.success(request, 'You have marked messaege as unread')
+    messages.success(request, 'You have marked the message as unread')
 
     return redirect(reverse('contacts'))
 
@@ -90,6 +90,7 @@ def compose_message(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Messsage successfully sent')
             return redirect(reverse('home'))
         else:
             print(form.errors.as_data())
