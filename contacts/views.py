@@ -1,6 +1,7 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.db.models import Q
 from .models import Contacts, Replied
 from .forms import ContactForm, ReplyForm
@@ -75,6 +76,7 @@ def mark_unread(request, contact_id):
     inbox = Contacts.objects.get(id=contact_id)
     inbox.read = False
     inbox.save()
+    messages.success(request, 'You have marked messaege as unread')
 
     return redirect(reverse('contacts'))
 
